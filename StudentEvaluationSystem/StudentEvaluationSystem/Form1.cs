@@ -19,6 +19,7 @@ namespace StudentEvaluationSystem
 		private void Window_Close_Btn_Click(object sender, EventArgs e)
 		{
 			Application.Exit();
+			//deneme yazisi
 		}
 
 		private void Teacher_Login_Btn_Click(object sender, EventArgs e)
