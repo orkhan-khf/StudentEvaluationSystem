@@ -12,20 +12,29 @@ namespace StudentEvaluationSystem
 {
 	public partial class Form1 : Form
 	{
+        CommonMethods CommonMethods = new CommonMethods();
 		public Form1()
 		{
 			InitializeComponent();
 		}
 		private void Window_Close_Btn_Click(object sender, EventArgs e)
 		{
-			Application.Exit();
+            CommonMethods.CloseApp();
 		}
 
 		private void Teacher_Login_Btn_Click(object sender, EventArgs e)
 		{
-			TeacherLoginPage teacherLoginPage = new TeacherLoginPage();
-			teacherLoginPage.Visible = true;
-			this.Visible = false;
+            CommonMethods.OpenAnotherForm(this, new TeacherLoginPage());
 		}
-	}
+
+        private void Mentor_Login_Btn_Click(object sender, EventArgs e)
+        {
+            CommonMethods.OpenAnotherForm(this, new MentorLoginPage());
+        }
+
+        private void Main_Pg_Student_Login_Btn_Click(object sender, EventArgs e)
+        {
+            CommonMethods.OpenAnotherForm(this, new StudentLoginPage());
+        }
+    }
 }

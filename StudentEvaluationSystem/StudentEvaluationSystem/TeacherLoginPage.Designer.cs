@@ -33,6 +33,8 @@
             this.Main_Logo = new System.Windows.Forms.PictureBox();
             this.Teacher_Login_Email = new System.Windows.Forms.TextBox();
             this.Teacher_Login_Password = new System.Windows.Forms.TextBox();
+            this.Teacher_Pg_Teacher_Login_Btn = new System.Windows.Forms.Button();
+            this.Teacher_Pg_Back_Btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Main_Logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             this.Teacher_Login_Email.Name = "Teacher_Login_Email";
             this.Teacher_Login_Email.Size = new System.Drawing.Size(230, 26);
             this.Teacher_Login_Email.TabIndex = 3;
-            this.Teacher_Login_Email.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxChanged);
+            this.Teacher_Login_Email.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
             // 
             // Teacher_Login_Password
             // 
@@ -80,13 +82,47 @@
             this.Teacher_Login_Password.Name = "Teacher_Login_Password";
             this.Teacher_Login_Password.Size = new System.Drawing.Size(230, 26);
             this.Teacher_Login_Password.TabIndex = 4;
-            this.Teacher_Login_Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxChanged);
+            this.Teacher_Login_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
+            // 
+            // Teacher_Pg_Teacher_Login_Btn
+            // 
+            this.Teacher_Pg_Teacher_Login_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(205)))));
+            this.Teacher_Pg_Teacher_Login_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Teacher_Pg_Teacher_Login_Btn.FlatAppearance.BorderSize = 0;
+            this.Teacher_Pg_Teacher_Login_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Teacher_Pg_Teacher_Login_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Teacher_Pg_Teacher_Login_Btn.ForeColor = System.Drawing.Color.White;
+            this.Teacher_Pg_Teacher_Login_Btn.Location = new System.Drawing.Point(285, 346);
+            this.Teacher_Pg_Teacher_Login_Btn.Name = "Teacher_Pg_Teacher_Login_Btn";
+            this.Teacher_Pg_Teacher_Login_Btn.Size = new System.Drawing.Size(230, 26);
+            this.Teacher_Pg_Teacher_Login_Btn.TabIndex = 5;
+            this.Teacher_Pg_Teacher_Login_Btn.Text = "Login";
+            this.Teacher_Pg_Teacher_Login_Btn.UseVisualStyleBackColor = false;
+            this.Teacher_Pg_Teacher_Login_Btn.Click += new System.EventHandler(this.Teacher_Pg_Teacher_Login_Btn_Click);
+            // 
+            // Teacher_Pg_Back_Btn
+            // 
+            this.Teacher_Pg_Back_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(129)))), ((int)(((byte)(43)))));
+            this.Teacher_Pg_Back_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Teacher_Pg_Back_Btn.FlatAppearance.BorderSize = 0;
+            this.Teacher_Pg_Back_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Teacher_Pg_Back_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Teacher_Pg_Back_Btn.ForeColor = System.Drawing.Color.White;
+            this.Teacher_Pg_Back_Btn.Location = new System.Drawing.Point(285, 378);
+            this.Teacher_Pg_Back_Btn.Name = "Teacher_Pg_Back_Btn";
+            this.Teacher_Pg_Back_Btn.Size = new System.Drawing.Size(230, 26);
+            this.Teacher_Pg_Back_Btn.TabIndex = 6;
+            this.Teacher_Pg_Back_Btn.Text = "Back";
+            this.Teacher_Pg_Back_Btn.UseVisualStyleBackColor = false;
+            this.Teacher_Pg_Back_Btn.Click += new System.EventHandler(this.Teacher_Pg_Back_Btn_Click);
             // 
             // TeacherLoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.Teacher_Pg_Back_Btn);
+            this.Controls.Add(this.Teacher_Pg_Teacher_Login_Btn);
             this.Controls.Add(this.Teacher_Login_Password);
             this.Controls.Add(this.Teacher_Login_Email);
             this.Controls.Add(this.Main_Logo);
@@ -108,5 +144,7 @@
 		private System.Windows.Forms.PictureBox Main_Logo;
 		private System.Windows.Forms.TextBox Teacher_Login_Email;
 		private System.Windows.Forms.TextBox Teacher_Login_Password;
-	}
+        private System.Windows.Forms.Button Teacher_Pg_Teacher_Login_Btn;
+        private System.Windows.Forms.Button Teacher_Pg_Back_Btn;
+    }
 }
