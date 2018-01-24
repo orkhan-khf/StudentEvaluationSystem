@@ -41,7 +41,7 @@ namespace StudentEvaluationSystem
 
         private void Teacher_Pg_Teacher_Login_Btn_Click(object sender, EventArgs e)
         {
-            CommonMethods.Login(this.Teacher_Login_Email, this.Teacher_Login_Password, CommonMethods.db.Teachers);
+			CommonMethods.Login(Teacher_Login_Email, Teacher_Login_Password, CommonMethods.db.Teachers, this);
         }
     }
 }
