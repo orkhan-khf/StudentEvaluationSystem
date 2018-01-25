@@ -69,7 +69,7 @@
     <Property Name="student_github_account" Type="nvarchar" MaxLength="120" Nullable="false" />
     <Property Name="student_info" Type="nvarchar" MaxLength="2500" Nullable="false" />
     <Property Name="student_photo" Type="nvarchar" MaxLength="150" Nullable="false" />
-    <Property Name="student_cap_point" Type="float" Nullable="false" />
+    <Property Name="student_cap_point" Type="float" />
     <Property Name="student_group_id" Type="int" Nullable="false" />
     <Property Name="student_gender_id" Type="int" Nullable="false" />
     <Property Name="student_password" Type="nvarchar" MaxLength="35" Nullable="false" />
