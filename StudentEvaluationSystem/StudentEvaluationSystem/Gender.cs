@@ -18,8 +18,8 @@ namespace StudentEvaluationSystem
         public Gender()
         {
             this.Mentors = new HashSet<Mentor>();
-            this.Students = new HashSet<Student>();
             this.Teachers = new HashSet<Teacher>();
+            this.Students = new HashSet<Student>();
         }
     
         public int id { get; set; }
@@ -28,8 +28,8 @@ namespace StudentEvaluationSystem
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Mentor> Mentors { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Student> Students { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Teacher> Teachers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Student> Students { get; set; }
     }
 }

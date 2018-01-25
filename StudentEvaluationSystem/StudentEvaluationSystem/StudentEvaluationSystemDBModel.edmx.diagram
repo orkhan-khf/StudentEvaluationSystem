@@ -11,21 +11,21 @@
         <EntityTypeShape EntityType="StudentEvaluationSystemDBModel.Group" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentEvaluationSystemDBModel.Mentor" Width="1.5" PointX="2.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentEvaluationSystemDBModel.Setting" Width="1.5" PointX="10.125" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentEvaluationSystemDBModel.Student" Width="2" PointX="7.5" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentEvaluationSystemDBModel.Task_Types" Width="1.5" PointX="12.375" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentEvaluationSystemDBModel.Task" Width="1.5" PointX="9.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentEvaluationSystemDBModel.Teacher" Width="1.75" PointX="0.5" PointY="4" IsExpanded="true" />
         <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Mentors_mentor_gender_id_TO_Gender_id" ManuallyRouted="false" />
-        <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Students_student_gender_id_TO_Gender_id" ManuallyRouted="false" />
         <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Teachers_teacher_gender_id_TO_Gender_id" ManuallyRouted="false" />
         <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Group_Types_group_schedule_id_TO_Group_Schedule_id" ManuallyRouted="false" />
         <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Groups_group_type_id_TO_Group_Types_id" ManuallyRouted="false" />
         <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Groups_group_mentor_id_TO_Mentors_id" ManuallyRouted="false" />
         <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Groups_group_teacher_id_TO_Teachers_id" ManuallyRouted="false" />
-        <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Students_student_group_id_TO_Groups_id" ManuallyRouted="false" />
         <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Tasks_task_group_id_TO_Groups_id" ManuallyRouted="false" />
-        <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Tasks_task_student_id_TO_Students_id" ManuallyRouted="false" />
         <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Tasks_task_type_id_TO_Task_Types_id" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="StudentEvaluationSystemDBModel.Student" Width="1.5" PointX="7.5" PointY="1.875" />
+        <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Students_student_gender_id_TO_Gender_id" />
+        <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Students_student_group_id_TO_Groups_id" />
+        <AssociationConnector Association="StudentEvaluationSystemDBModel.FK_Tasks_task_student_id_TO_Students_id" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

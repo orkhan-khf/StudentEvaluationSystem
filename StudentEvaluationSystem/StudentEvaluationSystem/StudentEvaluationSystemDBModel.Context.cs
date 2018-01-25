@@ -31,9 +31,9 @@ namespace StudentEvaluationSystem
         public virtual DbSet<Group> Groups { get; set; }
         public virtual DbSet<Mentor> Mentors { get; set; }
         public virtual DbSet<Setting> Settings { get; set; }
-        public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Task_Types> Task_Types { get; set; }
         public virtual DbSet<Task> Tasks { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
     }
 }
