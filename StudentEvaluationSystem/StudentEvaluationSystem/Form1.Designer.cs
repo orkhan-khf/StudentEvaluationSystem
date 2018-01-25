@@ -75,7 +75,7 @@
             this.Main_Pg_Teacher_Login_Btn.Name = "Main_Pg_Teacher_Login_Btn";
             this.Main_Pg_Teacher_Login_Btn.Size = new System.Drawing.Size(280, 50);
             this.Main_Pg_Teacher_Login_Btn.TabIndex = 1;
-            this.Main_Pg_Teacher_Login_Btn.Text = "Teacher Login";
+            this.Main_Pg_Teacher_Login_Btn.Text = "Teacher Logintest";
             this.Main_Pg_Teacher_Login_Btn.UseVisualStyleBackColor = false;
             this.Main_Pg_Teacher_Login_Btn.Click += new System.EventHandler(this.Teacher_Login_Btn_Click);
             // 
