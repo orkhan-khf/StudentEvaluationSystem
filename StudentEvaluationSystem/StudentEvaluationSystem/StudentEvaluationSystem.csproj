@@ -76,6 +76,12 @@
       <DependentUpon>AdminpanelPage.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonMethods.cs" />
+    <Compile Include="CurrentMentorsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CurrentMentorsPage.Designer.cs">
+      <DependentUpon>CurrentMentorsPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="CurrentTeachersPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </Compile>
     <EmbeddedResource Include="AdminpanelPage.resx">
       <DependentUpon>AdminpanelPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrentMentorsPage.resx">
+      <DependentUpon>CurrentMentorsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CurrentTeachersPage.resx">
       <DependentUpon>CurrentTeachersPage.cs</DependentUpon>
