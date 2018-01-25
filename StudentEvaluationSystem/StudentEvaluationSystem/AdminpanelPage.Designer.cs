@@ -48,46 +48,52 @@
             this.Teacher_Surname = new System.Windows.Forms.TextBox();
             this.Teacher_Name = new System.Windows.Forms.TextBox();
             this.Mentors_Tab = new System.Windows.Forms.TabPage();
+            this.Show_Current_Mentors_Btn = new System.Windows.Forms.Button();
+            this.Mentor_Name = new System.Windows.Forms.TextBox();
+            this.Select_Mentor_Photo_Btn = new System.Windows.Forms.Button();
+            this.Mentor_Surname = new System.Windows.Forms.TextBox();
+            this.Add_New_Mentor_Btn = new System.Windows.Forms.Button();
+            this.Mentor_Email = new System.Windows.Forms.TextBox();
+            this.Mentor_Phone = new System.Windows.Forms.TextBox();
+            this.Mentor_Password = new System.Windows.Forms.TextBox();
+            this.Mentor_Gender = new System.Windows.Forms.ComboBox();
+            this.Mentor_Info = new System.Windows.Forms.TextBox();
+            this.Mentor_Password_Confirm = new System.Windows.Forms.TextBox();
             this.Task_Types_Tab = new System.Windows.Forms.TabPage();
+            this.Add_New_Task_Type_Btn = new System.Windows.Forms.Button();
+            this.Task_Type_Name = new System.Windows.Forms.TextBox();
+            this.Task_Type_Rate = new System.Windows.Forms.TextBox();
             this.Group_Schedules_Tab = new System.Windows.Forms.TabPage();
             this.Group_Types_Tab = new System.Windows.Forms.TabPage();
             this.Groups_Tab = new System.Windows.Forms.TabPage();
-            this.Students_Tab = new System.Windows.Forms.TabPage();
-            this.Settings_Tab = new System.Windows.Forms.TabPage();
-            this.AP_Exit_Btn = new System.Windows.Forms.Button();
-            this.Show_Current_Mentors_Btn = new System.Windows.Forms.Button();
-            this.Select_Mentor_Photo_Btn = new System.Windows.Forms.Button();
-            this.Add_New_Mentor_Btn = new System.Windows.Forms.Button();
-            this.Mentor_Phone = new System.Windows.Forms.TextBox();
-            this.Mentor_Gender = new System.Windows.Forms.ComboBox();
-            this.Mentor_Password_Confirm = new System.Windows.Forms.TextBox();
-            this.Mentor_Info = new System.Windows.Forms.TextBox();
-            this.Mentor_Password = new System.Windows.Forms.TextBox();
-            this.Mentor_Email = new System.Windows.Forms.TextBox();
-            this.Mentor_Surname = new System.Windows.Forms.TextBox();
-            this.Mentor_Name = new System.Windows.Forms.TextBox();
-            this.Add_New_Task_Type_Btn = new System.Windows.Forms.Button();
-            this.Task_Type_Rate = new System.Windows.Forms.TextBox();
-            this.Task_Type_Name = new System.Windows.Forms.TextBox();
-            this.Group_Type_Name = new System.Windows.Forms.TextBox();
-            this.Group_Schedule = new System.Windows.Forms.ComboBox();
             this.Group_Start_Date = new System.Windows.Forms.DateTimePicker();
-            this.Group_Mentor = new System.Windows.Forms.ComboBox();
-            this.Group_Teacher = new System.Windows.Forms.ComboBox();
-            this.Group_Type = new System.Windows.Forms.ComboBox();
             this.Group_Name = new System.Windows.Forms.TextBox();
+            this.Group_Mentor = new System.Windows.Forms.ComboBox();
+            this.Group_Type = new System.Windows.Forms.ComboBox();
+            this.Group_Teacher = new System.Windows.Forms.ComboBox();
+            this.Students_Tab = new System.Windows.Forms.TabPage();
             this.Student_Github_Account = new System.Windows.Forms.TextBox();
+            this.Student_Name = new System.Windows.Forms.TextBox();
             this.Student_Group = new System.Windows.Forms.ComboBox();
+            this.Student_Surname = new System.Windows.Forms.TextBox();
             this.Select_Student_Photo_Btn = new System.Windows.Forms.Button();
+            this.Student_Email = new System.Windows.Forms.TextBox();
             this.Add_New_Student_Btn = new System.Windows.Forms.Button();
+            this.Student_Phone = new System.Windows.Forms.TextBox();
             this.Student_Password_Confirm = new System.Windows.Forms.TextBox();
+            this.Student_Info = new System.Windows.Forms.TextBox();
             this.Student_Gender = new System.Windows.Forms.ComboBox();
             this.Student_Password = new System.Windows.Forms.TextBox();
-            this.Student_Info = new System.Windows.Forms.TextBox();
-            this.Student_Phone = new System.Windows.Forms.TextBox();
-            this.Student_Email = new System.Windows.Forms.TextBox();
-            this.Student_Surname = new System.Windows.Forms.TextBox();
-            this.Student_Name = new System.Windows.Forms.TextBox();
+            this.Settings_Tab = new System.Windows.Forms.TabPage();
+            this.AP_Exit_Btn = new System.Windows.Forms.Button();
+            this.Group_Type_Name = new System.Windows.Forms.TextBox();
+            this.Group_Schedule = new System.Windows.Forms.ComboBox();
+            this.Add_New_Group_Schedule_Btn = new System.Windows.Forms.Button();
+            this.Group_Schedule_Name = new System.Windows.Forms.TextBox();
+            this.Group_Begin_Time = new System.Windows.Forms.DateTimePicker();
+            this.Group_End_Time = new System.Windows.Forms.DateTimePicker();
+            this.Add_New_Group_Type_Btn = new System.Windows.Forms.Button();
+            this.Add_New_Group_Btn = new System.Windows.Forms.Button();
             this.Adminpanel_Gender.SuspendLayout();
             this.Genders_Tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gender_Table)).BeginInit();
@@ -95,6 +101,7 @@
             this.Mentors_Tab.SuspendLayout();
             this.Task_Types_Tab.SuspendLayout();
             this.Group_Schedules_Tab.SuspendLayout();
+            this.Group_Types_Tab.SuspendLayout();
             this.Groups_Tab.SuspendLayout();
             this.Students_Tab.SuspendLayout();
             this.SuspendLayout();
@@ -356,6 +363,123 @@
             this.Mentors_Tab.Text = "Mentors";
             this.Mentors_Tab.UseVisualStyleBackColor = true;
             // 
+            // Show_Current_Mentors_Btn
+            // 
+            this.Show_Current_Mentors_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
+            this.Show_Current_Mentors_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Show_Current_Mentors_Btn.FlatAppearance.BorderSize = 0;
+            this.Show_Current_Mentors_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Show_Current_Mentors_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Show_Current_Mentors_Btn.ForeColor = System.Drawing.Color.White;
+            this.Show_Current_Mentors_Btn.Location = new System.Drawing.Point(6, 473);
+            this.Show_Current_Mentors_Btn.Name = "Show_Current_Mentors_Btn";
+            this.Show_Current_Mentors_Btn.Size = new System.Drawing.Size(230, 26);
+            this.Show_Current_Mentors_Btn.TabIndex = 41;
+            this.Show_Current_Mentors_Btn.Text = "Show Mentors";
+            this.Show_Current_Mentors_Btn.UseVisualStyleBackColor = false;
+            // 
+            // Mentor_Name
+            // 
+            this.Mentor_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mentor_Name.Location = new System.Drawing.Point(6, 6);
+            this.Mentor_Name.Multiline = true;
+            this.Mentor_Name.Name = "Mentor_Name";
+            this.Mentor_Name.Size = new System.Drawing.Size(230, 26);
+            this.Mentor_Name.TabIndex = 32;
+            // 
+            // Select_Mentor_Photo_Btn
+            // 
+            this.Select_Mentor_Photo_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
+            this.Select_Mentor_Photo_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Select_Mentor_Photo_Btn.FlatAppearance.BorderSize = 0;
+            this.Select_Mentor_Photo_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Select_Mentor_Photo_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Select_Mentor_Photo_Btn.ForeColor = System.Drawing.Color.White;
+            this.Select_Mentor_Photo_Btn.Location = new System.Drawing.Point(6, 371);
+            this.Select_Mentor_Photo_Btn.Name = "Select_Mentor_Photo_Btn";
+            this.Select_Mentor_Photo_Btn.Size = new System.Drawing.Size(230, 26);
+            this.Select_Mentor_Photo_Btn.TabIndex = 40;
+            this.Select_Mentor_Photo_Btn.Text = "Select Photo";
+            this.Select_Mentor_Photo_Btn.UseVisualStyleBackColor = false;
+            // 
+            // Mentor_Surname
+            // 
+            this.Mentor_Surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mentor_Surname.Location = new System.Drawing.Point(6, 38);
+            this.Mentor_Surname.Multiline = true;
+            this.Mentor_Surname.Name = "Mentor_Surname";
+            this.Mentor_Surname.Size = new System.Drawing.Size(230, 26);
+            this.Mentor_Surname.TabIndex = 33;
+            // 
+            // Add_New_Mentor_Btn
+            // 
+            this.Add_New_Mentor_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
+            this.Add_New_Mentor_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Add_New_Mentor_Btn.FlatAppearance.BorderSize = 0;
+            this.Add_New_Mentor_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Add_New_Mentor_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_New_Mentor_Btn.ForeColor = System.Drawing.Color.White;
+            this.Add_New_Mentor_Btn.Location = new System.Drawing.Point(6, 403);
+            this.Add_New_Mentor_Btn.Name = "Add_New_Mentor_Btn";
+            this.Add_New_Mentor_Btn.Size = new System.Drawing.Size(230, 26);
+            this.Add_New_Mentor_Btn.TabIndex = 31;
+            this.Add_New_Mentor_Btn.Text = "Add Mentor";
+            this.Add_New_Mentor_Btn.UseVisualStyleBackColor = false;
+            // 
+            // Mentor_Email
+            // 
+            this.Mentor_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mentor_Email.Location = new System.Drawing.Point(6, 70);
+            this.Mentor_Email.Multiline = true;
+            this.Mentor_Email.Name = "Mentor_Email";
+            this.Mentor_Email.Size = new System.Drawing.Size(230, 26);
+            this.Mentor_Email.TabIndex = 34;
+            // 
+            // Mentor_Phone
+            // 
+            this.Mentor_Phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mentor_Phone.Location = new System.Drawing.Point(6, 166);
+            this.Mentor_Phone.Multiline = true;
+            this.Mentor_Phone.Name = "Mentor_Phone";
+            this.Mentor_Phone.Size = new System.Drawing.Size(230, 26);
+            this.Mentor_Phone.TabIndex = 39;
+            // 
+            // Mentor_Password
+            // 
+            this.Mentor_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mentor_Password.Location = new System.Drawing.Point(6, 102);
+            this.Mentor_Password.Multiline = true;
+            this.Mentor_Password.Name = "Mentor_Password";
+            this.Mentor_Password.Size = new System.Drawing.Size(230, 26);
+            this.Mentor_Password.TabIndex = 35;
+            // 
+            // Mentor_Gender
+            // 
+            this.Mentor_Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Mentor_Gender.FormattingEnabled = true;
+            this.Mentor_Gender.Location = new System.Drawing.Point(6, 198);
+            this.Mentor_Gender.Name = "Mentor_Gender";
+            this.Mentor_Gender.Size = new System.Drawing.Size(230, 26);
+            this.Mentor_Gender.TabIndex = 38;
+            // 
+            // Mentor_Info
+            // 
+            this.Mentor_Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mentor_Info.Location = new System.Drawing.Point(6, 230);
+            this.Mentor_Info.Multiline = true;
+            this.Mentor_Info.Name = "Mentor_Info";
+            this.Mentor_Info.Size = new System.Drawing.Size(230, 135);
+            this.Mentor_Info.TabIndex = 36;
+            // 
+            // Mentor_Password_Confirm
+            // 
+            this.Mentor_Password_Confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mentor_Password_Confirm.Location = new System.Drawing.Point(6, 134);
+            this.Mentor_Password_Confirm.Multiline = true;
+            this.Mentor_Password_Confirm.Name = "Mentor_Password_Confirm";
+            this.Mentor_Password_Confirm.Size = new System.Drawing.Size(230, 26);
+            this.Mentor_Password_Confirm.TabIndex = 37;
+            // 
             // Task_Types_Tab
             // 
             this.Task_Types_Tab.Controls.Add(this.Add_New_Task_Type_Btn);
@@ -368,10 +492,45 @@
             this.Task_Types_Tab.Text = "Task Types";
             this.Task_Types_Tab.UseVisualStyleBackColor = true;
             // 
+            // Add_New_Task_Type_Btn
+            // 
+            this.Add_New_Task_Type_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(205)))));
+            this.Add_New_Task_Type_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Add_New_Task_Type_Btn.FlatAppearance.BorderSize = 0;
+            this.Add_New_Task_Type_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Add_New_Task_Type_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_New_Task_Type_Btn.ForeColor = System.Drawing.Color.White;
+            this.Add_New_Task_Type_Btn.Location = new System.Drawing.Point(6, 70);
+            this.Add_New_Task_Type_Btn.Name = "Add_New_Task_Type_Btn";
+            this.Add_New_Task_Type_Btn.Size = new System.Drawing.Size(230, 26);
+            this.Add_New_Task_Type_Btn.TabIndex = 25;
+            this.Add_New_Task_Type_Btn.Text = "Add Task Type";
+            this.Add_New_Task_Type_Btn.UseVisualStyleBackColor = false;
+            // 
+            // Task_Type_Name
+            // 
+            this.Task_Type_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Task_Type_Name.Location = new System.Drawing.Point(6, 6);
+            this.Task_Type_Name.Multiline = true;
+            this.Task_Type_Name.Name = "Task_Type_Name";
+            this.Task_Type_Name.Size = new System.Drawing.Size(230, 26);
+            this.Task_Type_Name.TabIndex = 26;
+            // 
+            // Task_Type_Rate
+            // 
+            this.Task_Type_Rate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Task_Type_Rate.Location = new System.Drawing.Point(6, 38);
+            this.Task_Type_Rate.Multiline = true;
+            this.Task_Type_Rate.Name = "Task_Type_Rate";
+            this.Task_Type_Rate.Size = new System.Drawing.Size(230, 26);
+            this.Task_Type_Rate.TabIndex = 27;
+            // 
             // Group_Schedules_Tab
             // 
-            this.Group_Schedules_Tab.Controls.Add(this.Group_Type_Name);
-            this.Group_Schedules_Tab.Controls.Add(this.Group_Schedule);
+            this.Group_Schedules_Tab.Controls.Add(this.Group_End_Time);
+            this.Group_Schedules_Tab.Controls.Add(this.Group_Begin_Time);
+            this.Group_Schedules_Tab.Controls.Add(this.Add_New_Group_Schedule_Btn);
+            this.Group_Schedules_Tab.Controls.Add(this.Group_Schedule_Name);
             this.Group_Schedules_Tab.Location = new System.Drawing.Point(4, 27);
             this.Group_Schedules_Tab.Name = "Group_Schedules_Tab";
             this.Group_Schedules_Tab.Size = new System.Drawing.Size(768, 505);
@@ -381,6 +540,9 @@
             // 
             // Group_Types_Tab
             // 
+            this.Group_Types_Tab.Controls.Add(this.Add_New_Group_Type_Btn);
+            this.Group_Types_Tab.Controls.Add(this.Group_Type_Name);
+            this.Group_Types_Tab.Controls.Add(this.Group_Schedule);
             this.Group_Types_Tab.Location = new System.Drawing.Point(4, 27);
             this.Group_Types_Tab.Name = "Group_Types_Tab";
             this.Group_Types_Tab.Size = new System.Drawing.Size(768, 505);
@@ -390,6 +552,7 @@
             // 
             // Groups_Tab
             // 
+            this.Groups_Tab.Controls.Add(this.Add_New_Group_Btn);
             this.Groups_Tab.Controls.Add(this.Group_Start_Date);
             this.Groups_Tab.Controls.Add(this.Group_Name);
             this.Groups_Tab.Controls.Add(this.Group_Mentor);
@@ -401,6 +564,49 @@
             this.Groups_Tab.TabIndex = 6;
             this.Groups_Tab.Text = "Groups";
             this.Groups_Tab.UseVisualStyleBackColor = true;
+            // 
+            // Group_Start_Date
+            // 
+            this.Group_Start_Date.Location = new System.Drawing.Point(6, 134);
+            this.Group_Start_Date.Name = "Group_Start_Date";
+            this.Group_Start_Date.Size = new System.Drawing.Size(230, 22);
+            this.Group_Start_Date.TabIndex = 33;
+            // 
+            // Group_Name
+            // 
+            this.Group_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Group_Name.Location = new System.Drawing.Point(6, 6);
+            this.Group_Name.Multiline = true;
+            this.Group_Name.Name = "Group_Name";
+            this.Group_Name.Size = new System.Drawing.Size(230, 26);
+            this.Group_Name.TabIndex = 29;
+            // 
+            // Group_Mentor
+            // 
+            this.Group_Mentor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Group_Mentor.FormattingEnabled = true;
+            this.Group_Mentor.Location = new System.Drawing.Point(6, 102);
+            this.Group_Mentor.Name = "Group_Mentor";
+            this.Group_Mentor.Size = new System.Drawing.Size(230, 26);
+            this.Group_Mentor.TabIndex = 32;
+            // 
+            // Group_Type
+            // 
+            this.Group_Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Group_Type.FormattingEnabled = true;
+            this.Group_Type.Location = new System.Drawing.Point(6, 38);
+            this.Group_Type.Name = "Group_Type";
+            this.Group_Type.Size = new System.Drawing.Size(230, 26);
+            this.Group_Type.TabIndex = 30;
+            // 
+            // Group_Teacher
+            // 
+            this.Group_Teacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Group_Teacher.FormattingEnabled = true;
+            this.Group_Teacher.Location = new System.Drawing.Point(6, 70);
+            this.Group_Teacher.Name = "Group_Teacher";
+            this.Group_Teacher.Size = new System.Drawing.Size(230, 26);
+            this.Group_Teacher.TabIndex = 31;
             // 
             // Students_Tab
             // 
@@ -422,6 +628,126 @@
             this.Students_Tab.TabIndex = 7;
             this.Students_Tab.Text = "Students";
             this.Students_Tab.UseVisualStyleBackColor = true;
+            // 
+            // Student_Github_Account
+            // 
+            this.Student_Github_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Student_Github_Account.Location = new System.Drawing.Point(6, 198);
+            this.Student_Github_Account.Multiline = true;
+            this.Student_Github_Account.Name = "Student_Github_Account";
+            this.Student_Github_Account.Size = new System.Drawing.Size(230, 26);
+            this.Student_Github_Account.TabIndex = 54;
+            // 
+            // Student_Name
+            // 
+            this.Student_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Student_Name.Location = new System.Drawing.Point(6, 6);
+            this.Student_Name.Multiline = true;
+            this.Student_Name.Name = "Student_Name";
+            this.Student_Name.Size = new System.Drawing.Size(230, 26);
+            this.Student_Name.TabIndex = 44;
+            // 
+            // Student_Group
+            // 
+            this.Student_Group.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Student_Group.FormattingEnabled = true;
+            this.Student_Group.Location = new System.Drawing.Point(6, 262);
+            this.Student_Group.Name = "Student_Group";
+            this.Student_Group.Size = new System.Drawing.Size(230, 26);
+            this.Student_Group.TabIndex = 53;
+            // 
+            // Student_Surname
+            // 
+            this.Student_Surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Student_Surname.Location = new System.Drawing.Point(6, 38);
+            this.Student_Surname.Multiline = true;
+            this.Student_Surname.Name = "Student_Surname";
+            this.Student_Surname.Size = new System.Drawing.Size(230, 26);
+            this.Student_Surname.TabIndex = 45;
+            // 
+            // Select_Student_Photo_Btn
+            // 
+            this.Select_Student_Photo_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(56)))), ((int)(((byte)(36)))));
+            this.Select_Student_Photo_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Select_Student_Photo_Btn.FlatAppearance.BorderSize = 0;
+            this.Select_Student_Photo_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Select_Student_Photo_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Select_Student_Photo_Btn.ForeColor = System.Drawing.Color.White;
+            this.Select_Student_Photo_Btn.Location = new System.Drawing.Point(6, 435);
+            this.Select_Student_Photo_Btn.Name = "Select_Student_Photo_Btn";
+            this.Select_Student_Photo_Btn.Size = new System.Drawing.Size(230, 26);
+            this.Select_Student_Photo_Btn.TabIndex = 52;
+            this.Select_Student_Photo_Btn.Text = "Select Photo";
+            this.Select_Student_Photo_Btn.UseVisualStyleBackColor = false;
+            // 
+            // Student_Email
+            // 
+            this.Student_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Student_Email.Location = new System.Drawing.Point(6, 70);
+            this.Student_Email.Multiline = true;
+            this.Student_Email.Name = "Student_Email";
+            this.Student_Email.Size = new System.Drawing.Size(230, 26);
+            this.Student_Email.TabIndex = 46;
+            // 
+            // Add_New_Student_Btn
+            // 
+            this.Add_New_Student_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(56)))), ((int)(((byte)(36)))));
+            this.Add_New_Student_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Add_New_Student_Btn.FlatAppearance.BorderSize = 0;
+            this.Add_New_Student_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Add_New_Student_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_New_Student_Btn.ForeColor = System.Drawing.Color.White;
+            this.Add_New_Student_Btn.Location = new System.Drawing.Point(6, 467);
+            this.Add_New_Student_Btn.Name = "Add_New_Student_Btn";
+            this.Add_New_Student_Btn.Size = new System.Drawing.Size(230, 26);
+            this.Add_New_Student_Btn.TabIndex = 43;
+            this.Add_New_Student_Btn.Text = "Add Student";
+            this.Add_New_Student_Btn.UseVisualStyleBackColor = false;
+            // 
+            // Student_Phone
+            // 
+            this.Student_Phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Student_Phone.Location = new System.Drawing.Point(6, 166);
+            this.Student_Phone.Multiline = true;
+            this.Student_Phone.Name = "Student_Phone";
+            this.Student_Phone.Size = new System.Drawing.Size(230, 26);
+            this.Student_Phone.TabIndex = 47;
+            // 
+            // Student_Password_Confirm
+            // 
+            this.Student_Password_Confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Student_Password_Confirm.Location = new System.Drawing.Point(6, 134);
+            this.Student_Password_Confirm.Multiline = true;
+            this.Student_Password_Confirm.Name = "Student_Password_Confirm";
+            this.Student_Password_Confirm.Size = new System.Drawing.Size(230, 26);
+            this.Student_Password_Confirm.TabIndex = 51;
+            // 
+            // Student_Info
+            // 
+            this.Student_Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Student_Info.Location = new System.Drawing.Point(6, 294);
+            this.Student_Info.Multiline = true;
+            this.Student_Info.Name = "Student_Info";
+            this.Student_Info.Size = new System.Drawing.Size(230, 135);
+            this.Student_Info.TabIndex = 48;
+            // 
+            // Student_Gender
+            // 
+            this.Student_Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Student_Gender.FormattingEnabled = true;
+            this.Student_Gender.Location = new System.Drawing.Point(6, 230);
+            this.Student_Gender.Name = "Student_Gender";
+            this.Student_Gender.Size = new System.Drawing.Size(230, 26);
+            this.Student_Gender.TabIndex = 50;
+            // 
+            // Student_Password
+            // 
+            this.Student_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Student_Password.Location = new System.Drawing.Point(6, 102);
+            this.Student_Password.Multiline = true;
+            this.Student_Password.Name = "Student_Password";
+            this.Student_Password.Size = new System.Drawing.Size(230, 26);
+            this.Student_Password.TabIndex = 49;
             // 
             // Settings_Tab
             // 
@@ -448,156 +774,6 @@
             this.AP_Exit_Btn.UseVisualStyleBackColor = false;
             this.AP_Exit_Btn.Click += new System.EventHandler(this.Student_Pg_Back_Btn_Click);
             // 
-            // Show_Current_Mentors_Btn
-            // 
-            this.Show_Current_Mentors_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
-            this.Show_Current_Mentors_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Show_Current_Mentors_Btn.FlatAppearance.BorderSize = 0;
-            this.Show_Current_Mentors_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Show_Current_Mentors_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Show_Current_Mentors_Btn.ForeColor = System.Drawing.Color.White;
-            this.Show_Current_Mentors_Btn.Location = new System.Drawing.Point(6, 473);
-            this.Show_Current_Mentors_Btn.Name = "Show_Current_Mentors_Btn";
-            this.Show_Current_Mentors_Btn.Size = new System.Drawing.Size(230, 26);
-            this.Show_Current_Mentors_Btn.TabIndex = 41;
-            this.Show_Current_Mentors_Btn.Text = "Show Mentors";
-            this.Show_Current_Mentors_Btn.UseVisualStyleBackColor = false;
-            // 
-            // Select_Mentor_Photo_Btn
-            // 
-            this.Select_Mentor_Photo_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
-            this.Select_Mentor_Photo_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Select_Mentor_Photo_Btn.FlatAppearance.BorderSize = 0;
-            this.Select_Mentor_Photo_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Select_Mentor_Photo_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Select_Mentor_Photo_Btn.ForeColor = System.Drawing.Color.White;
-            this.Select_Mentor_Photo_Btn.Location = new System.Drawing.Point(6, 371);
-            this.Select_Mentor_Photo_Btn.Name = "Select_Mentor_Photo_Btn";
-            this.Select_Mentor_Photo_Btn.Size = new System.Drawing.Size(230, 26);
-            this.Select_Mentor_Photo_Btn.TabIndex = 40;
-            this.Select_Mentor_Photo_Btn.Text = "Select Photo";
-            this.Select_Mentor_Photo_Btn.UseVisualStyleBackColor = false;
-            // 
-            // Add_New_Mentor_Btn
-            // 
-            this.Add_New_Mentor_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
-            this.Add_New_Mentor_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Add_New_Mentor_Btn.FlatAppearance.BorderSize = 0;
-            this.Add_New_Mentor_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Add_New_Mentor_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add_New_Mentor_Btn.ForeColor = System.Drawing.Color.White;
-            this.Add_New_Mentor_Btn.Location = new System.Drawing.Point(6, 403);
-            this.Add_New_Mentor_Btn.Name = "Add_New_Mentor_Btn";
-            this.Add_New_Mentor_Btn.Size = new System.Drawing.Size(230, 26);
-            this.Add_New_Mentor_Btn.TabIndex = 31;
-            this.Add_New_Mentor_Btn.Text = "Add Mentor";
-            this.Add_New_Mentor_Btn.UseVisualStyleBackColor = false;
-            // 
-            // Mentor_Phone
-            // 
-            this.Mentor_Phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mentor_Phone.Location = new System.Drawing.Point(6, 166);
-            this.Mentor_Phone.Multiline = true;
-            this.Mentor_Phone.Name = "Mentor_Phone";
-            this.Mentor_Phone.Size = new System.Drawing.Size(230, 26);
-            this.Mentor_Phone.TabIndex = 39;
-            // 
-            // Mentor_Gender
-            // 
-            this.Mentor_Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Mentor_Gender.FormattingEnabled = true;
-            this.Mentor_Gender.Location = new System.Drawing.Point(6, 198);
-            this.Mentor_Gender.Name = "Mentor_Gender";
-            this.Mentor_Gender.Size = new System.Drawing.Size(230, 26);
-            this.Mentor_Gender.TabIndex = 38;
-            // 
-            // Mentor_Password_Confirm
-            // 
-            this.Mentor_Password_Confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mentor_Password_Confirm.Location = new System.Drawing.Point(6, 134);
-            this.Mentor_Password_Confirm.Multiline = true;
-            this.Mentor_Password_Confirm.Name = "Mentor_Password_Confirm";
-            this.Mentor_Password_Confirm.Size = new System.Drawing.Size(230, 26);
-            this.Mentor_Password_Confirm.TabIndex = 37;
-            // 
-            // Mentor_Info
-            // 
-            this.Mentor_Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mentor_Info.Location = new System.Drawing.Point(6, 230);
-            this.Mentor_Info.Multiline = true;
-            this.Mentor_Info.Name = "Mentor_Info";
-            this.Mentor_Info.Size = new System.Drawing.Size(230, 135);
-            this.Mentor_Info.TabIndex = 36;
-            // 
-            // Mentor_Password
-            // 
-            this.Mentor_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mentor_Password.Location = new System.Drawing.Point(6, 102);
-            this.Mentor_Password.Multiline = true;
-            this.Mentor_Password.Name = "Mentor_Password";
-            this.Mentor_Password.Size = new System.Drawing.Size(230, 26);
-            this.Mentor_Password.TabIndex = 35;
-            // 
-            // Mentor_Email
-            // 
-            this.Mentor_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mentor_Email.Location = new System.Drawing.Point(6, 70);
-            this.Mentor_Email.Multiline = true;
-            this.Mentor_Email.Name = "Mentor_Email";
-            this.Mentor_Email.Size = new System.Drawing.Size(230, 26);
-            this.Mentor_Email.TabIndex = 34;
-            // 
-            // Mentor_Surname
-            // 
-            this.Mentor_Surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mentor_Surname.Location = new System.Drawing.Point(6, 38);
-            this.Mentor_Surname.Multiline = true;
-            this.Mentor_Surname.Name = "Mentor_Surname";
-            this.Mentor_Surname.Size = new System.Drawing.Size(230, 26);
-            this.Mentor_Surname.TabIndex = 33;
-            // 
-            // Mentor_Name
-            // 
-            this.Mentor_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mentor_Name.Location = new System.Drawing.Point(6, 6);
-            this.Mentor_Name.Multiline = true;
-            this.Mentor_Name.Name = "Mentor_Name";
-            this.Mentor_Name.Size = new System.Drawing.Size(230, 26);
-            this.Mentor_Name.TabIndex = 32;
-            // 
-            // Add_New_Task_Type_Btn
-            // 
-            this.Add_New_Task_Type_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(205)))));
-            this.Add_New_Task_Type_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Add_New_Task_Type_Btn.FlatAppearance.BorderSize = 0;
-            this.Add_New_Task_Type_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Add_New_Task_Type_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add_New_Task_Type_Btn.ForeColor = System.Drawing.Color.White;
-            this.Add_New_Task_Type_Btn.Location = new System.Drawing.Point(6, 70);
-            this.Add_New_Task_Type_Btn.Name = "Add_New_Task_Type_Btn";
-            this.Add_New_Task_Type_Btn.Size = new System.Drawing.Size(230, 26);
-            this.Add_New_Task_Type_Btn.TabIndex = 25;
-            this.Add_New_Task_Type_Btn.Text = "Add Task Type";
-            this.Add_New_Task_Type_Btn.UseVisualStyleBackColor = false;
-            // 
-            // Task_Type_Rate
-            // 
-            this.Task_Type_Rate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Task_Type_Rate.Location = new System.Drawing.Point(6, 38);
-            this.Task_Type_Rate.Multiline = true;
-            this.Task_Type_Rate.Name = "Task_Type_Rate";
-            this.Task_Type_Rate.Size = new System.Drawing.Size(230, 26);
-            this.Task_Type_Rate.TabIndex = 27;
-            // 
-            // Task_Type_Name
-            // 
-            this.Task_Type_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Task_Type_Name.Location = new System.Drawing.Point(6, 6);
-            this.Task_Type_Name.Multiline = true;
-            this.Task_Type_Name.Name = "Task_Type_Name";
-            this.Task_Type_Name.Size = new System.Drawing.Size(230, 26);
-            this.Task_Type_Name.TabIndex = 26;
-            // 
             // Group_Type_Name
             // 
             this.Group_Type_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -605,7 +781,7 @@
             this.Group_Type_Name.Multiline = true;
             this.Group_Type_Name.Name = "Group_Type_Name";
             this.Group_Type_Name.Size = new System.Drawing.Size(230, 26);
-            this.Group_Type_Name.TabIndex = 32;
+            this.Group_Type_Name.TabIndex = 34;
             // 
             // Group_Schedule
             // 
@@ -614,170 +790,75 @@
             this.Group_Schedule.Location = new System.Drawing.Point(6, 38);
             this.Group_Schedule.Name = "Group_Schedule";
             this.Group_Schedule.Size = new System.Drawing.Size(230, 26);
-            this.Group_Schedule.TabIndex = 31;
+            this.Group_Schedule.TabIndex = 33;
             // 
-            // Group_Start_Date
+            // Add_New_Group_Schedule_Btn
             // 
-            this.Group_Start_Date.Location = new System.Drawing.Point(6, 134);
-            this.Group_Start_Date.Name = "Group_Start_Date";
-            this.Group_Start_Date.Size = new System.Drawing.Size(230, 22);
-            this.Group_Start_Date.TabIndex = 33;
+            this.Add_New_Group_Schedule_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(205)))));
+            this.Add_New_Group_Schedule_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Add_New_Group_Schedule_Btn.FlatAppearance.BorderSize = 0;
+            this.Add_New_Group_Schedule_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Add_New_Group_Schedule_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_New_Group_Schedule_Btn.ForeColor = System.Drawing.Color.White;
+            this.Add_New_Group_Schedule_Btn.Location = new System.Drawing.Point(6, 103);
+            this.Add_New_Group_Schedule_Btn.Name = "Add_New_Group_Schedule_Btn";
+            this.Add_New_Group_Schedule_Btn.Size = new System.Drawing.Size(230, 26);
+            this.Add_New_Group_Schedule_Btn.TabIndex = 28;
+            this.Add_New_Group_Schedule_Btn.Text = "Add Group Schedule";
+            this.Add_New_Group_Schedule_Btn.UseVisualStyleBackColor = false;
             // 
-            // Group_Mentor
+            // Group_Schedule_Name
             // 
-            this.Group_Mentor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Group_Mentor.FormattingEnabled = true;
-            this.Group_Mentor.Location = new System.Drawing.Point(6, 102);
-            this.Group_Mentor.Name = "Group_Mentor";
-            this.Group_Mentor.Size = new System.Drawing.Size(230, 26);
-            this.Group_Mentor.TabIndex = 32;
+            this.Group_Schedule_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Group_Schedule_Name.Location = new System.Drawing.Point(6, 6);
+            this.Group_Schedule_Name.Multiline = true;
+            this.Group_Schedule_Name.Name = "Group_Schedule_Name";
+            this.Group_Schedule_Name.Size = new System.Drawing.Size(230, 26);
+            this.Group_Schedule_Name.TabIndex = 29;
             // 
-            // Group_Teacher
+            // Group_Begin_Time
             // 
-            this.Group_Teacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Group_Teacher.FormattingEnabled = true;
-            this.Group_Teacher.Location = new System.Drawing.Point(6, 70);
-            this.Group_Teacher.Name = "Group_Teacher";
-            this.Group_Teacher.Size = new System.Drawing.Size(230, 26);
-            this.Group_Teacher.TabIndex = 31;
+            this.Group_Begin_Time.Location = new System.Drawing.Point(6, 42);
+            this.Group_Begin_Time.Name = "Group_Begin_Time";
+            this.Group_Begin_Time.Size = new System.Drawing.Size(230, 22);
+            this.Group_Begin_Time.TabIndex = 34;
             // 
-            // Group_Type
+            // Group_End_Time
             // 
-            this.Group_Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Group_Type.FormattingEnabled = true;
-            this.Group_Type.Location = new System.Drawing.Point(6, 38);
-            this.Group_Type.Name = "Group_Type";
-            this.Group_Type.Size = new System.Drawing.Size(230, 26);
-            this.Group_Type.TabIndex = 30;
+            this.Group_End_Time.Location = new System.Drawing.Point(6, 75);
+            this.Group_End_Time.Name = "Group_End_Time";
+            this.Group_End_Time.Size = new System.Drawing.Size(230, 22);
+            this.Group_End_Time.TabIndex = 35;
             // 
-            // Group_Name
+            // Add_New_Group_Type_Btn
             // 
-            this.Group_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Group_Name.Location = new System.Drawing.Point(6, 6);
-            this.Group_Name.Multiline = true;
-            this.Group_Name.Name = "Group_Name";
-            this.Group_Name.Size = new System.Drawing.Size(230, 26);
-            this.Group_Name.TabIndex = 29;
+            this.Add_New_Group_Type_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(205)))));
+            this.Add_New_Group_Type_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Add_New_Group_Type_Btn.FlatAppearance.BorderSize = 0;
+            this.Add_New_Group_Type_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Add_New_Group_Type_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_New_Group_Type_Btn.ForeColor = System.Drawing.Color.White;
+            this.Add_New_Group_Type_Btn.Location = new System.Drawing.Point(6, 70);
+            this.Add_New_Group_Type_Btn.Name = "Add_New_Group_Type_Btn";
+            this.Add_New_Group_Type_Btn.Size = new System.Drawing.Size(230, 26);
+            this.Add_New_Group_Type_Btn.TabIndex = 35;
+            this.Add_New_Group_Type_Btn.Text = "Add Group Type";
+            this.Add_New_Group_Type_Btn.UseVisualStyleBackColor = false;
             // 
-            // Student_Github_Account
+            // Add_New_Group_Btn
             // 
-            this.Student_Github_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Student_Github_Account.Location = new System.Drawing.Point(6, 198);
-            this.Student_Github_Account.Multiline = true;
-            this.Student_Github_Account.Name = "Student_Github_Account";
-            this.Student_Github_Account.Size = new System.Drawing.Size(230, 26);
-            this.Student_Github_Account.TabIndex = 54;
-            // 
-            // Student_Group
-            // 
-            this.Student_Group.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Student_Group.FormattingEnabled = true;
-            this.Student_Group.Location = new System.Drawing.Point(6, 262);
-            this.Student_Group.Name = "Student_Group";
-            this.Student_Group.Size = new System.Drawing.Size(230, 26);
-            this.Student_Group.TabIndex = 53;
-            // 
-            // Select_Student_Photo_Btn
-            // 
-            this.Select_Student_Photo_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(56)))), ((int)(((byte)(36)))));
-            this.Select_Student_Photo_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Select_Student_Photo_Btn.FlatAppearance.BorderSize = 0;
-            this.Select_Student_Photo_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Select_Student_Photo_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Select_Student_Photo_Btn.ForeColor = System.Drawing.Color.White;
-            this.Select_Student_Photo_Btn.Location = new System.Drawing.Point(6, 435);
-            this.Select_Student_Photo_Btn.Name = "Select_Student_Photo_Btn";
-            this.Select_Student_Photo_Btn.Size = new System.Drawing.Size(230, 26);
-            this.Select_Student_Photo_Btn.TabIndex = 52;
-            this.Select_Student_Photo_Btn.Text = "Select Photo";
-            this.Select_Student_Photo_Btn.UseVisualStyleBackColor = false;
-            // 
-            // Add_New_Student_Btn
-            // 
-            this.Add_New_Student_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(56)))), ((int)(((byte)(36)))));
-            this.Add_New_Student_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Add_New_Student_Btn.FlatAppearance.BorderSize = 0;
-            this.Add_New_Student_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Add_New_Student_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add_New_Student_Btn.ForeColor = System.Drawing.Color.White;
-            this.Add_New_Student_Btn.Location = new System.Drawing.Point(6, 467);
-            this.Add_New_Student_Btn.Name = "Add_New_Student_Btn";
-            this.Add_New_Student_Btn.Size = new System.Drawing.Size(230, 26);
-            this.Add_New_Student_Btn.TabIndex = 43;
-            this.Add_New_Student_Btn.Text = "Add Student";
-            this.Add_New_Student_Btn.UseVisualStyleBackColor = false;
-            // 
-            // Student_Password_Confirm
-            // 
-            this.Student_Password_Confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Student_Password_Confirm.Location = new System.Drawing.Point(6, 134);
-            this.Student_Password_Confirm.Multiline = true;
-            this.Student_Password_Confirm.Name = "Student_Password_Confirm";
-            this.Student_Password_Confirm.Size = new System.Drawing.Size(230, 26);
-            this.Student_Password_Confirm.TabIndex = 51;
-            // 
-            // Student_Gender
-            // 
-            this.Student_Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Student_Gender.FormattingEnabled = true;
-            this.Student_Gender.Location = new System.Drawing.Point(6, 230);
-            this.Student_Gender.Name = "Student_Gender";
-            this.Student_Gender.Size = new System.Drawing.Size(230, 26);
-            this.Student_Gender.TabIndex = 50;
-            // 
-            // Student_Password
-            // 
-            this.Student_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Student_Password.Location = new System.Drawing.Point(6, 102);
-            this.Student_Password.Multiline = true;
-            this.Student_Password.Name = "Student_Password";
-            this.Student_Password.Size = new System.Drawing.Size(230, 26);
-            this.Student_Password.TabIndex = 49;
-            // 
-            // Student_Info
-            // 
-            this.Student_Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Student_Info.Location = new System.Drawing.Point(6, 294);
-            this.Student_Info.Multiline = true;
-            this.Student_Info.Name = "Student_Info";
-            this.Student_Info.Size = new System.Drawing.Size(230, 135);
-            this.Student_Info.TabIndex = 48;
-            // 
-            // Student_Phone
-            // 
-            this.Student_Phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Student_Phone.Location = new System.Drawing.Point(6, 166);
-            this.Student_Phone.Multiline = true;
-            this.Student_Phone.Name = "Student_Phone";
-            this.Student_Phone.Size = new System.Drawing.Size(230, 26);
-            this.Student_Phone.TabIndex = 47;
-            // 
-            // Student_Email
-            // 
-            this.Student_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Student_Email.Location = new System.Drawing.Point(6, 70);
-            this.Student_Email.Multiline = true;
-            this.Student_Email.Name = "Student_Email";
-            this.Student_Email.Size = new System.Drawing.Size(230, 26);
-            this.Student_Email.TabIndex = 46;
-            // 
-            // Student_Surname
-            // 
-            this.Student_Surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Student_Surname.Location = new System.Drawing.Point(6, 38);
-            this.Student_Surname.Multiline = true;
-            this.Student_Surname.Name = "Student_Surname";
-            this.Student_Surname.Size = new System.Drawing.Size(230, 26);
-            this.Student_Surname.TabIndex = 45;
-            // 
-            // Student_Name
-            // 
-            this.Student_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Student_Name.Location = new System.Drawing.Point(6, 6);
-            this.Student_Name.Multiline = true;
-            this.Student_Name.Name = "Student_Name";
-            this.Student_Name.Size = new System.Drawing.Size(230, 26);
-            this.Student_Name.TabIndex = 44;
+            this.Add_New_Group_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(205)))));
+            this.Add_New_Group_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Add_New_Group_Btn.FlatAppearance.BorderSize = 0;
+            this.Add_New_Group_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Add_New_Group_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_New_Group_Btn.ForeColor = System.Drawing.Color.White;
+            this.Add_New_Group_Btn.Location = new System.Drawing.Point(6, 162);
+            this.Add_New_Group_Btn.Name = "Add_New_Group_Btn";
+            this.Add_New_Group_Btn.Size = new System.Drawing.Size(230, 26);
+            this.Add_New_Group_Btn.TabIndex = 36;
+            this.Add_New_Group_Btn.Text = "Add Group";
+            this.Add_New_Group_Btn.UseVisualStyleBackColor = false;
             // 
             // AdminpanelPage
             // 
@@ -804,6 +885,8 @@
             this.Task_Types_Tab.PerformLayout();
             this.Group_Schedules_Tab.ResumeLayout(false);
             this.Group_Schedules_Tab.PerformLayout();
+            this.Group_Types_Tab.ResumeLayout(false);
+            this.Group_Types_Tab.PerformLayout();
             this.Groups_Tab.ResumeLayout(false);
             this.Groups_Tab.PerformLayout();
             this.Students_Tab.ResumeLayout(false);
@@ -854,8 +937,6 @@
         private System.Windows.Forms.Button Add_New_Task_Type_Btn;
         private System.Windows.Forms.TextBox Task_Type_Name;
         private System.Windows.Forms.TextBox Task_Type_Rate;
-        private System.Windows.Forms.TextBox Group_Type_Name;
-        private System.Windows.Forms.ComboBox Group_Schedule;
         private System.Windows.Forms.DateTimePicker Group_Start_Date;
         private System.Windows.Forms.TextBox Group_Name;
         private System.Windows.Forms.ComboBox Group_Mentor;
@@ -873,5 +954,13 @@
         private System.Windows.Forms.TextBox Student_Info;
         private System.Windows.Forms.ComboBox Student_Gender;
         private System.Windows.Forms.TextBox Student_Password;
+        private System.Windows.Forms.TextBox Group_Type_Name;
+        private System.Windows.Forms.ComboBox Group_Schedule;
+        private System.Windows.Forms.DateTimePicker Group_End_Time;
+        private System.Windows.Forms.DateTimePicker Group_Begin_Time;
+        private System.Windows.Forms.Button Add_New_Group_Schedule_Btn;
+        private System.Windows.Forms.TextBox Group_Schedule_Name;
+        private System.Windows.Forms.Button Add_New_Group_Type_Btn;
+        private System.Windows.Forms.Button Add_New_Group_Btn;
     }
 }
