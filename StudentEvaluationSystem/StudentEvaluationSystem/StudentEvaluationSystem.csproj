@@ -153,6 +153,12 @@
     <Compile Include="TeacherLoginPage.Designer.cs">
       <DependentUpon>TeacherLoginPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeacherpanelPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherpanelPage.Designer.cs">
+      <DependentUpon>TeacherpanelPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminpanelPage.resx">
       <DependentUpon>AdminpanelPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherLoginPage.resx">
       <DependentUpon>TeacherLoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherpanelPage.resx">
+      <DependentUpon>TeacherpanelPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
