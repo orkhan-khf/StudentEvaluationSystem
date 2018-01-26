@@ -70,8 +70,8 @@ namespace StudentEvaluationSystem
                 this.PlaceHolderEdit(currentTextBox, placeHolderString);
             }
         }
-		//overload 1 for TextBoxChanged method
-		public void TextBoxChanged(KeyEventArgs _e, object _sender, string field_1, string field_1_placeholder, string field_2, string field_2_placeholder, string field_3, string field_3_placeholder, string field_4, string field_4_placeholder, string field_5, string field_5_placeholder, string field_6, string field_6_placeholder, string field_7, string field_7_placeholder, string field_8, string field_8_placeholder)
+		//overload 1 for TextBoxChanged method (adminpanelde gender, teacher, mentor elave etme textboxlarini sifirlayir)
+		public void TextBoxChanged(KeyEventArgs _e, object _sender, string field_1, string field_1_placeholder, string field_2, string field_2_placeholder, string field_3, string field_3_placeholder, string field_4, string field_4_placeholder, string field_5, string field_5_placeholder, string field_6, string field_6_placeholder, string field_7, string field_7_placeholder, string field_8, string field_8_placeholder, string field_9, string field_9_placeholder, string field_10, string field_10_placeholder, string field_11, string field_11_placeholder, string field_12, string field_12_placeholder, string field_13, string field_13_placeholder, string field_14, string field_14_placeholder, string field_15, string field_15_placeholder, string field_16, string field_16_placeholder, string field_17, string field_17_placeholder, string field_18, string field_18_placeholder, string field_19, string field_19_placeholder, string field_20, string field_20_placeholder)
 		{
 			//istifadeci enterlere klik edende hecne etmesin. (bu olmayanda entere klik edende istifadecinin daxil etdiyi texti bosaldirdi)
 			if (_e.KeyCode == Keys.Enter)
@@ -113,6 +113,54 @@ namespace StudentEvaluationSystem
 				else if (currentTextBox.Name == field_8)
 				{
 					placeHolderString = field_8_placeholder;
+				}
+				else if (currentTextBox.Name == field_9)
+				{
+					placeHolderString = field_9_placeholder;
+				}
+				else if (currentTextBox.Name == field_10)
+				{
+					placeHolderString = field_10_placeholder;
+				}
+				else if (currentTextBox.Name == field_11)
+				{
+					placeHolderString = field_11_placeholder;
+				}
+				else if (currentTextBox.Name == field_12)
+				{
+					placeHolderString = field_12_placeholder;
+				}
+				else if (currentTextBox.Name == field_13)
+				{
+					placeHolderString = field_13_placeholder;
+				}
+				else if (currentTextBox.Name == field_14)
+				{
+					placeHolderString = field_14_placeholder;
+				}
+				else if (currentTextBox.Name == field_15)
+				{
+					placeHolderString = field_15_placeholder;
+				}
+				else if (currentTextBox.Name == field_16)
+				{
+					placeHolderString = field_16_placeholder;
+				}
+				else if (currentTextBox.Name == field_17)
+				{
+					placeHolderString = field_17_placeholder;
+				}
+				else if (currentTextBox.Name == field_18)
+				{
+					placeHolderString = field_18_placeholder;
+				}
+				else if (currentTextBox.Name == field_19)
+				{
+					placeHolderString = field_19_placeholder;
+				}
+				else if (currentTextBox.Name == field_20)
+				{
+					placeHolderString = field_20_placeholder;
 				}
 				this.PlaceHolderEdit(currentTextBox, placeHolderString);
 			}
@@ -209,6 +257,33 @@ namespace StudentEvaluationSystem
 			_grid_table.Columns.Remove("Gender");
 			_grid_table.Columns.Remove("Groups");
 		}
+		//overload 2
+		public void FillDataGridView(DataGridView _grid_table, DbSet<Mentor> _table)
+		{
+			_grid_table.DataSource = _table.ToList();
+			_grid_table.Columns.Remove("mentor_password");
+			_grid_table.Columns.Remove("Gender");
+			_grid_table.Columns.Remove("Groups");
+		}
+		//overload 3
+		public void FillDataGridView(DataGridView _grid_table, DbSet<Task_Types> _table)
+		{
+			_grid_table.DataSource = _table.ToList();
+			_grid_table.Columns.Remove("Tasks");
+		}
+		//overload 4
+		public void FillDataGridView(DataGridView _grid_table, DbSet<Group_Schedule> _table)
+		{
+			_grid_table.DataSource = _table.ToList();
+			_grid_table.Columns.Remove("Group_Types");
+		}
+		//overload 5
+		public void FillDataGridView(DataGridView _grid_table, DbSet<Group_Types> _table)
+		{
+			_grid_table.DataSource = _table.ToList();
+			_grid_table.Columns.Remove("Group_Schedule");
+			_grid_table.Columns.Remove("Groups");
+		}
 
 
 
@@ -245,8 +320,132 @@ namespace StudentEvaluationSystem
 				}
 			}
 		}
-		//overload1
+		//overload 1
 		public void DataGridViewDeleteSelectedRows(KeyEventArgs _e, DataGridView _grid_table, DbSet<Teacher> _table)
+		{
+			if (_e.KeyCode == Keys.Delete)
+			{
+				if (MessageBox.Show("Are you sure you want to delete this data?", "Warning", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+				{
+					try
+					{
+						int selected_row_id = Convert.ToInt32(_grid_table.SelectedCells[0].Value);
+						var element = _table.SingleOrDefault(r => r.id == selected_row_id);
+						if (element != null)
+						{
+							_table.Remove(element);
+							db.SaveChanges();
+							SuccessMsg("Row deleted!");
+							_grid_table.DataSource = null;
+							FillDataGridView(_grid_table, _table);
+						}
+						else
+						{
+							ErrMsg("Row not found! Please close and open window than try again.");
+						}
+					}
+					catch
+					{
+						ErrMsg("Operation failed. Please try again!");
+					}
+				}
+			}
+		}
+		//overload 2
+		public void DataGridViewDeleteSelectedRows(KeyEventArgs _e, DataGridView _grid_table, DbSet<Mentor> _table)
+		{
+			if (_e.KeyCode == Keys.Delete)
+			{
+				if (MessageBox.Show("Are you sure you want to delete this data?", "Warning", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+				{
+					try
+					{
+						int selected_row_id = Convert.ToInt32(_grid_table.SelectedCells[0].Value);
+						var element = _table.SingleOrDefault(r => r.id == selected_row_id);
+						if (element != null)
+						{
+							_table.Remove(element);
+							db.SaveChanges();
+							SuccessMsg("Row deleted!");
+							_grid_table.DataSource = null;
+							FillDataGridView(_grid_table, _table);
+						}
+						else
+						{
+							ErrMsg("Row not found! Please close and open window than try again.");
+						}
+					}
+					catch
+					{
+						ErrMsg("Operation failed. Please try again!");
+					}
+				}
+			}
+		}
+		//overload 3
+		public void DataGridViewDeleteSelectedRows(KeyEventArgs _e, DataGridView _grid_table, DbSet<Task_Types> _table)
+		{
+			if (_e.KeyCode == Keys.Delete)
+			{
+				if (MessageBox.Show("Are you sure you want to delete this data?", "Warning", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+				{
+					try
+					{
+						int selected_row_id = Convert.ToInt32(_grid_table.SelectedCells[0].Value);
+						var element = _table.SingleOrDefault(r => r.id == selected_row_id);
+						if (element != null)
+						{
+							_table.Remove(element);
+							db.SaveChanges();
+							SuccessMsg("Row deleted!");
+							_grid_table.DataSource = null;
+							FillDataGridView(_grid_table, _table);
+						}
+						else
+						{
+							ErrMsg("Row not found! Please close and open window than try again.");
+						}
+					}
+					catch
+					{
+						ErrMsg("Operation failed. Please try again!");
+					}
+				}
+			}
+		}
+		//overload 4
+		public void DataGridViewDeleteSelectedRows(KeyEventArgs _e, DataGridView _grid_table, DbSet<Group_Schedule> _table)
+		{
+			if (_e.KeyCode == Keys.Delete)
+			{
+				if (MessageBox.Show("Are you sure you want to delete this data?", "Warning", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+				{
+					try
+					{
+						int selected_row_id = Convert.ToInt32(_grid_table.SelectedCells[0].Value);
+						var element = _table.SingleOrDefault(r => r.id == selected_row_id);
+						if (element != null)
+						{
+							_table.Remove(element);
+							db.SaveChanges();
+							SuccessMsg("Row deleted!");
+							_grid_table.DataSource = null;
+							FillDataGridView(_grid_table, _table);
+						}
+						else
+						{
+							ErrMsg("Row not found! Please close and open window than try again.");
+						}
+					}
+					catch
+					{
+						ErrMsg("Operation failed. Please try again!");
+					}
+				}
+			}
+		}
+		//overload 4
+		public void DataGridViewDeleteSelectedRows(KeyEventArgs _e, DataGridView _grid_table, DbSet<Group_Types> _table)
 		{
 			if (_e.KeyCode == Keys.Delete)
 			{
@@ -305,6 +504,33 @@ namespace StudentEvaluationSystem
 		{
 			_comboBox.DataSource = _table.ToList();
 			_comboBox.DisplayMember = "gender_name";
+			_comboBox.ValueMember = "id";
+		}
+		//overload 1
+		public void FillCombobox(ComboBox _comboBox, DbSet<Group_Schedule> _table)
+		{
+			_comboBox.DataSource = _table.ToList();
+			_comboBox.DisplayMember = "group_schedule_name";
+			_comboBox.ValueMember = "id";
+		}
+		//overload 2
+		public void FillCombobox(ComboBox _comboBox, DbSet<Group_Types> _table)
+		{
+			_comboBox.DataSource = _table.ToList();
+			_comboBox.DisplayMember = "group_type_name";
+			_comboBox.ValueMember = "id";
+		}
+		//overload 3
+		public void FillCombobox(ComboBox _comboBox, DbSet<Teacher> _table)
+		{
+			_comboBox.DataSource = _table.ToList();
+			_comboBox.DisplayMember = "teacher_surname";
+			_comboBox.ValueMember = "id";
+		}
+		public void FillCombobox(ComboBox _comboBox, DbSet<Mentor> _table)
+		{
+			_comboBox.DataSource = _table.ToList();
+			_comboBox.DisplayMember = "mentor_surname";
 			_comboBox.ValueMember = "id";
 		}
 

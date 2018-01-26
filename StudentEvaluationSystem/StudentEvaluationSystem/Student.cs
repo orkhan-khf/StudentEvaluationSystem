@@ -28,7 +28,7 @@ namespace StudentEvaluationSystem
         public string student_github_account { get; set; }
         public string student_info { get; set; }
         public string student_photo { get; set; }
-        public double student_cap_point { get; set; }
+        public Nullable<double> student_cap_point { get; set; }
         public int student_group_id { get; set; }
         public int student_gender_id { get; set; }
         public string student_password { get; set; }

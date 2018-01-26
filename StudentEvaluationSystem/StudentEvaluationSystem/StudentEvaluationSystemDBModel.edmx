@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="StudentEvaluationSystemDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="StudentEvaluationSystemDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Gender">
           <Key>
             <PropertyRef Name="id" />
@@ -74,7 +74,7 @@
           <Property Name="student_github_account" Type="nvarchar" MaxLength="120" Nullable="false" />
           <Property Name="student_info" Type="nvarchar" MaxLength="2500" Nullable="false" />
           <Property Name="student_photo" Type="nvarchar" MaxLength="150" Nullable="false" />
-          <Property Name="student_cap_point" Type="float" Nullable="false" />
+          <Property Name="student_cap_point" Type="float" />
           <Property Name="student_group_id" Type="int" Nullable="false" />
           <Property Name="student_gender_id" Type="int" Nullable="false" />
           <Property Name="student_password" Type="nvarchar" MaxLength="35" Nullable="false" />
@@ -303,8 +303,7 @@
             <End Role="Teachers" EntitySet="Teachers" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="StudentEvaluationSystemDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -315,8 +314,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="gender_name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Mentors" Relationship="Self.FK_Mentors_mentor_gender_id_TO_Gender_id" FromRole="Gender" ToRole="Mentors" />
-          <NavigationProperty Name="Students" Relationship="Self.FK_Students_student_gender_id_TO_Gender_id" FromRole="Gender" ToRole="Students" />
           <NavigationProperty Name="Teachers" Relationship="Self.FK_Teachers_teacher_gender_id_TO_Gender_id" FromRole="Gender" ToRole="Teachers" />
+          <NavigationProperty Name="Students" Relationship="StudentEvaluationSystemDBModel.FK_Students_student_gender_id_TO_Gender_id" FromRole="Gender" ToRole="Student" />
         </EntityType>
         <EntityType Name="Group_Schedule">
           <Key>
@@ -351,8 +350,8 @@
           <NavigationProperty Name="Group_Types" Relationship="Self.FK_Groups_group_type_id_TO_Group_Types_id" FromRole="Groups" ToRole="Group_Types" />
           <NavigationProperty Name="Mentor" Relationship="Self.FK_Groups_group_mentor_id_TO_Mentors_id" FromRole="Groups" ToRole="Mentors" />
           <NavigationProperty Name="Teacher" Relationship="Self.FK_Groups_group_teacher_id_TO_Teachers_id" FromRole="Groups" ToRole="Teachers" />
-          <NavigationProperty Name="Students" Relationship="Self.FK_Students_student_group_id_TO_Groups_id" FromRole="Groups" ToRole="Students" />
           <NavigationProperty Name="Tasks" Relationship="Self.FK_Tasks_task_group_id_TO_Groups_id" FromRole="Groups" ToRole="Tasks" />
+          <NavigationProperty Name="Students" Relationship="StudentEvaluationSystemDBModel.FK_Students_student_group_id_TO_Groups_id" FromRole="Group" ToRole="Student" />
         </EntityType>
         <EntityType Name="Mentor">
           <Key>
@@ -378,26 +377,6 @@
           <Property Name="screen_status" Type="Boolean" Nullable="false" />
           <Property Name="back_color" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="Student">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="student_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="student_surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="student_email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="student_phone" Type="Int32" Nullable="false" />
-          <Property Name="student_github_account" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="student_info" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="student_photo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="student_cap_point" Type="Double" Nullable="false" />
-          <Property Name="student_group_id" Type="Int32" Nullable="false" />
-          <Property Name="student_gender_id" Type="Int32" Nullable="false" />
-          <Property Name="student_password" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Gender" Relationship="Self.FK_Students_student_gender_id_TO_Gender_id" FromRole="Students" ToRole="Gender" />
-          <NavigationProperty Name="Group" Relationship="Self.FK_Students_student_group_id_TO_Groups_id" FromRole="Students" ToRole="Groups" />
-          <NavigationProperty Name="Tasks" Relationship="Self.FK_Tasks_task_student_id_TO_Students_id" FromRole="Students" ToRole="Tasks" />
-        </EntityType>
         <EntityType Name="Task_Types">
           <Key>
             <PropertyRef Name="id" />
@@ -421,8 +400,8 @@
           <Property Name="task_group_id" Type="Int32" Nullable="false" />
           <Property Name="task_student_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Group" Relationship="Self.FK_Tasks_task_group_id_TO_Groups_id" FromRole="Tasks" ToRole="Groups" />
-          <NavigationProperty Name="Student" Relationship="Self.FK_Tasks_task_student_id_TO_Students_id" FromRole="Tasks" ToRole="Students" />
           <NavigationProperty Name="Task_Types" Relationship="Self.FK_Tasks_task_type_id_TO_Task_Types_id" FromRole="Tasks" ToRole="Task_Types" />
+          <NavigationProperty Name="Student" Relationship="StudentEvaluationSystemDBModel.FK_Tasks_task_student_id_TO_Students_id" FromRole="Task" ToRole="Student" />
         </EntityType>
         <EntityType Name="Teacher">
           <Key>
@@ -449,18 +428,6 @@
             </Principal>
             <Dependent Role="Mentors">
               <PropertyRef Name="mentor_gender_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Students_student_gender_id_TO_Gender_id">
-          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
-          <End Role="Students" Type="Self.Student" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gender">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Students">
-              <PropertyRef Name="student_gender_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -524,18 +491,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Students_student_group_id_TO_Groups_id">
-          <End Role="Groups" Type="Self.Group" Multiplicity="1" />
-          <End Role="Students" Type="Self.Student" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Groups">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Students">
-              <PropertyRef Name="student_group_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Tasks_task_group_id_TO_Groups_id">
           <End Role="Groups" Type="Self.Group" Multiplicity="1" />
           <End Role="Tasks" Type="Self.Task" Multiplicity="*" />
@@ -545,18 +500,6 @@
             </Principal>
             <Dependent Role="Tasks">
               <PropertyRef Name="task_group_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Tasks_task_student_id_TO_Students_id">
-          <End Role="Students" Type="Self.Student" Multiplicity="1" />
-          <End Role="Tasks" Type="Self.Task" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Students">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Tasks">
-              <PropertyRef Name="task_student_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -579,17 +522,12 @@
           <EntitySet Name="Groups" EntityType="Self.Group" />
           <EntitySet Name="Mentors" EntityType="Self.Mentor" />
           <EntitySet Name="Settings" EntityType="Self.Setting" />
-          <EntitySet Name="Students" EntityType="Self.Student" />
           <EntitySet Name="Task_Types" EntityType="Self.Task_Types" />
           <EntitySet Name="Tasks" EntityType="Self.Task" />
           <EntitySet Name="Teachers" EntityType="Self.Teacher" />
           <AssociationSet Name="FK_Mentors_mentor_gender_id_TO_Gender_id" Association="Self.FK_Mentors_mentor_gender_id_TO_Gender_id">
             <End Role="Gender" EntitySet="Genders" />
             <End Role="Mentors" EntitySet="Mentors" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Students_student_gender_id_TO_Gender_id" Association="Self.FK_Students_student_gender_id_TO_Gender_id">
-            <End Role="Gender" EntitySet="Genders" />
-            <End Role="Students" EntitySet="Students" />
           </AssociationSet>
           <AssociationSet Name="FK_Teachers_teacher_gender_id_TO_Gender_id" Association="Self.FK_Teachers_teacher_gender_id_TO_Gender_id">
             <End Role="Gender" EntitySet="Genders" />
@@ -611,23 +549,84 @@
             <End Role="Teachers" EntitySet="Teachers" />
             <End Role="Groups" EntitySet="Groups" />
           </AssociationSet>
-          <AssociationSet Name="FK_Students_student_group_id_TO_Groups_id" Association="Self.FK_Students_student_group_id_TO_Groups_id">
-            <End Role="Groups" EntitySet="Groups" />
-            <End Role="Students" EntitySet="Students" />
-          </AssociationSet>
           <AssociationSet Name="FK_Tasks_task_group_id_TO_Groups_id" Association="Self.FK_Tasks_task_group_id_TO_Groups_id">
             <End Role="Groups" EntitySet="Groups" />
-            <End Role="Tasks" EntitySet="Tasks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tasks_task_student_id_TO_Students_id" Association="Self.FK_Tasks_task_student_id_TO_Students_id">
-            <End Role="Students" EntitySet="Students" />
             <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
           <AssociationSet Name="FK_Tasks_task_type_id_TO_Task_Types_id" Association="Self.FK_Tasks_task_type_id_TO_Task_Types_id">
             <End Role="Task_Types" EntitySet="Task_Types" />
             <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
+          <EntitySet Name="Students" EntityType="StudentEvaluationSystemDBModel.Student" />
+          <AssociationSet Name="FK_Students_student_gender_id_TO_Gender_id" Association="StudentEvaluationSystemDBModel.FK_Students_student_gender_id_TO_Gender_id">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_student_group_id_TO_Groups_id" Association="StudentEvaluationSystemDBModel.FK_Students_student_group_id_TO_Groups_id">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tasks_task_student_id_TO_Students_id" Association="StudentEvaluationSystemDBModel.FK_Tasks_task_student_id_TO_Students_id">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Task" EntitySet="Tasks" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="student_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="student_surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="student_email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="student_phone" Type="Int32" Nullable="false" />
+          <Property Name="student_github_account" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="student_info" Type="String" Nullable="false" MaxLength="2500" FixedLength="false" Unicode="true" />
+          <Property Name="student_photo" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="student_cap_point" Type="Double" />
+          <Property Name="student_group_id" Type="Int32" Nullable="false" />
+          <Property Name="student_gender_id" Type="Int32" Nullable="false" />
+          <Property Name="student_password" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Gender" Relationship="StudentEvaluationSystemDBModel.FK_Students_student_gender_id_TO_Gender_id" FromRole="Student" ToRole="Gender" />
+          <NavigationProperty Name="Group" Relationship="StudentEvaluationSystemDBModel.FK_Students_student_group_id_TO_Groups_id" FromRole="Student" ToRole="Group" />
+          <NavigationProperty Name="Tasks" Relationship="StudentEvaluationSystemDBModel.FK_Tasks_task_student_id_TO_Students_id" FromRole="Student" ToRole="Task" />
+        </EntityType>
+        <Association Name="FK_Students_student_gender_id_TO_Gender_id">
+          <End Type="StudentEvaluationSystemDBModel.Gender" Role="Gender" Multiplicity="1" />
+          <End Type="StudentEvaluationSystemDBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="student_gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_student_group_id_TO_Groups_id">
+          <End Type="StudentEvaluationSystemDBModel.Group" Role="Group" Multiplicity="1" />
+          <End Type="StudentEvaluationSystemDBModel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="student_group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tasks_task_student_id_TO_Students_id">
+          <End Type="StudentEvaluationSystemDBModel.Student" Role="Student" Multiplicity="1" />
+          <End Type="StudentEvaluationSystemDBModel.Task" Role="Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="task_student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -697,24 +696,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Students">
-            <EntityTypeMapping TypeName="StudentEvaluationSystemDBModel.Student">
-              <MappingFragment StoreEntitySet="Students">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="student_name" ColumnName="student_name" />
-                <ScalarProperty Name="student_surname" ColumnName="student_surname" />
-                <ScalarProperty Name="student_email" ColumnName="student_email" />
-                <ScalarProperty Name="student_phone" ColumnName="student_phone" />
-                <ScalarProperty Name="student_github_account" ColumnName="student_github_account" />
-                <ScalarProperty Name="student_info" ColumnName="student_info" />
-                <ScalarProperty Name="student_photo" ColumnName="student_photo" />
-                <ScalarProperty Name="student_cap_point" ColumnName="student_cap_point" />
-                <ScalarProperty Name="student_group_id" ColumnName="student_group_id" />
-                <ScalarProperty Name="student_gender_id" ColumnName="student_gender_id" />
-                <ScalarProperty Name="student_password" ColumnName="student_password" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Task_Types">
             <EntityTypeMapping TypeName="StudentEvaluationSystemDBModel.Task_Types">
               <MappingFragment StoreEntitySet="Task_Types">
@@ -751,6 +732,24 @@
                 <ScalarProperty Name="teacher_info" ColumnName="teacher_info" />
                 <ScalarProperty Name="teacher_gender_id" ColumnName="teacher_gender_id" />
                 <ScalarProperty Name="teacher_password" ColumnName="teacher_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="StudentEvaluationSystemDBModel.Student">
+              <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="student_password" ColumnName="student_password" />
+                <ScalarProperty Name="student_gender_id" ColumnName="student_gender_id" />
+                <ScalarProperty Name="student_group_id" ColumnName="student_group_id" />
+                <ScalarProperty Name="student_cap_point" ColumnName="student_cap_point" />
+                <ScalarProperty Name="student_photo" ColumnName="student_photo" />
+                <ScalarProperty Name="student_info" ColumnName="student_info" />
+                <ScalarProperty Name="student_github_account" ColumnName="student_github_account" />
+                <ScalarProperty Name="student_phone" ColumnName="student_phone" />
+                <ScalarProperty Name="student_email" ColumnName="student_email" />
+                <ScalarProperty Name="student_surname" ColumnName="student_surname" />
+                <ScalarProperty Name="student_name" ColumnName="student_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

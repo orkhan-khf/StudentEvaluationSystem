@@ -45,7 +45,7 @@
 			this.Window_Close_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Window_Close_Btn.FlatAppearance.BorderSize = 0;
 			this.Window_Close_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Window_Close_Btn.Location = new System.Drawing.Point(954, -1);
+			this.Window_Close_Btn.Location = new System.Drawing.Point(954, 0);
 			this.Window_Close_Btn.Name = "Window_Close_Btn";
 			this.Window_Close_Btn.Size = new System.Drawing.Size(46, 25);
 			this.Window_Close_Btn.TabIndex = 3;

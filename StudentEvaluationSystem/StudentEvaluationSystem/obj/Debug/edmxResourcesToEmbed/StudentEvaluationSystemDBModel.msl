@@ -64,24 +64,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Students">
-      <EntityTypeMapping TypeName="StudentEvaluationSystemDBModel.Student">
-        <MappingFragment StoreEntitySet="Students">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="student_name" ColumnName="student_name" />
-          <ScalarProperty Name="student_surname" ColumnName="student_surname" />
-          <ScalarProperty Name="student_email" ColumnName="student_email" />
-          <ScalarProperty Name="student_phone" ColumnName="student_phone" />
-          <ScalarProperty Name="student_github_account" ColumnName="student_github_account" />
-          <ScalarProperty Name="student_info" ColumnName="student_info" />
-          <ScalarProperty Name="student_photo" ColumnName="student_photo" />
-          <ScalarProperty Name="student_cap_point" ColumnName="student_cap_point" />
-          <ScalarProperty Name="student_group_id" ColumnName="student_group_id" />
-          <ScalarProperty Name="student_gender_id" ColumnName="student_gender_id" />
-          <ScalarProperty Name="student_password" ColumnName="student_password" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Task_Types">
       <EntityTypeMapping TypeName="StudentEvaluationSystemDBModel.Task_Types">
         <MappingFragment StoreEntitySet="Task_Types">
@@ -118,6 +100,24 @@
           <ScalarProperty Name="teacher_info" ColumnName="teacher_info" />
           <ScalarProperty Name="teacher_gender_id" ColumnName="teacher_gender_id" />
           <ScalarProperty Name="teacher_password" ColumnName="teacher_password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="StudentEvaluationSystemDBModel.Student">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="student_password" ColumnName="student_password" />
+          <ScalarProperty Name="student_gender_id" ColumnName="student_gender_id" />
+          <ScalarProperty Name="student_group_id" ColumnName="student_group_id" />
+          <ScalarProperty Name="student_cap_point" ColumnName="student_cap_point" />
+          <ScalarProperty Name="student_photo" ColumnName="student_photo" />
+          <ScalarProperty Name="student_info" ColumnName="student_info" />
+          <ScalarProperty Name="student_github_account" ColumnName="student_github_account" />
+          <ScalarProperty Name="student_phone" ColumnName="student_phone" />
+          <ScalarProperty Name="student_email" ColumnName="student_email" />
+          <ScalarProperty Name="student_surname" ColumnName="student_surname" />
+          <ScalarProperty Name="student_name" ColumnName="student_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

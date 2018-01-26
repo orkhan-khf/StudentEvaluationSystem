@@ -72,5 +72,9 @@ C:\Users\P104\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem
 C:\Users\P104\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.pdb
 C:\Users\P104\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.AdminpanelPage.resources
 C:\Users\P104\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.CurrentTeachersPage.resources
+<<<<<<< HEAD
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.AdminpanelPage.resources
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.CurrentTeachersPage.resources
+=======
+C:\Users\P104\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.CurrentMentorsPage.resources
+>>>>>>> c79368fde88c2a7a02e423a853605d0c5b45e6b2
