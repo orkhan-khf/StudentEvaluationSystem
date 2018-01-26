@@ -25,7 +25,7 @@ namespace StudentEvaluationSystem
         public int task_student_id { get; set; }
     
         public virtual Group Group { get; set; }
-        public virtual Task_Types Task_Types { get; set; }
         public virtual Student Student { get; set; }
+        public virtual Task_Types Task_Types { get; set; }
     }
 }

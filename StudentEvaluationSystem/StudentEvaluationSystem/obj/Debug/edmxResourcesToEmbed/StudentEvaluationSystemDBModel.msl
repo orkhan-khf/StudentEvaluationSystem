@@ -64,15 +64,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Task_Types">
-      <EntityTypeMapping TypeName="StudentEvaluationSystemDBModel.Task_Types">
-        <MappingFragment StoreEntitySet="Task_Types">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="task_type_name" ColumnName="task_type_name" />
-          <ScalarProperty Name="task_type_rate" ColumnName="task_type_rate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Tasks">
       <EntityTypeMapping TypeName="StudentEvaluationSystemDBModel.Task">
         <MappingFragment StoreEntitySet="Tasks">
@@ -117,6 +108,15 @@
           <ScalarProperty Name="student_email" ColumnName="student_email" />
           <ScalarProperty Name="student_surname" ColumnName="student_surname" />
           <ScalarProperty Name="student_name" ColumnName="student_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Task_Types">
+      <EntityTypeMapping TypeName="StudentEvaluationSystemDBModel.Task_Types">
+        <MappingFragment StoreEntitySet="Task_Types">
+          <ScalarProperty Name="task_type_rate" ColumnName="task_type_rate" />
+          <ScalarProperty Name="task_type_name" ColumnName="task_type_name" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

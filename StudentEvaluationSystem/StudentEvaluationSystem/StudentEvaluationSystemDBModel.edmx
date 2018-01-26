@@ -74,7 +74,7 @@
           <Property Name="student_github_account" Type="nvarchar" MaxLength="120" Nullable="false" />
           <Property Name="student_info" Type="nvarchar" MaxLength="2500" Nullable="false" />
           <Property Name="student_photo" Type="nvarchar" MaxLength="150" Nullable="false" />
-          <Property Name="student_cap_point" Type="float" />
+          <Property Name="student_cap_point" Type="float" Nullable="false" />
           <Property Name="student_group_id" Type="int" Nullable="false" />
           <Property Name="student_gender_id" Type="int" Nullable="false" />
           <Property Name="student_password" Type="nvarchar" MaxLength="35" Nullable="false" />
@@ -377,15 +377,6 @@
           <Property Name="screen_status" Type="Boolean" Nullable="false" />
           <Property Name="back_color" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="Task_Types">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="task_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="task_type_rate" Type="Double" Nullable="false" />
-          <NavigationProperty Name="Tasks" Relationship="Self.FK_Tasks_task_type_id_TO_Task_Types_id" FromRole="Task_Types" ToRole="Tasks" />
-        </EntityType>
         <EntityType Name="Task">
           <Key>
             <PropertyRef Name="id" />
@@ -400,8 +391,8 @@
           <Property Name="task_group_id" Type="Int32" Nullable="false" />
           <Property Name="task_student_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Group" Relationship="Self.FK_Tasks_task_group_id_TO_Groups_id" FromRole="Tasks" ToRole="Groups" />
-          <NavigationProperty Name="Task_Types" Relationship="Self.FK_Tasks_task_type_id_TO_Task_Types_id" FromRole="Tasks" ToRole="Task_Types" />
           <NavigationProperty Name="Student" Relationship="StudentEvaluationSystemDBModel.FK_Tasks_task_student_id_TO_Students_id" FromRole="Task" ToRole="Student" />
+          <NavigationProperty Name="Task_Types" Relationship="StudentEvaluationSystemDBModel.FK_Tasks_task_type_id_TO_Task_Types_id" FromRole="Task" ToRole="Task_Types" />
         </EntityType>
         <EntityType Name="Teacher">
           <Key>
@@ -503,18 +494,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Tasks_task_type_id_TO_Task_Types_id">
-          <End Role="Task_Types" Type="Self.Task_Types" Multiplicity="1" />
-          <End Role="Tasks" Type="Self.Task" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Task_Types">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Tasks">
-              <PropertyRef Name="task_type_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="StudentEvaluationSystemDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Genders" EntityType="Self.Gender" />
           <EntitySet Name="Group_Schedule" EntityType="Self.Group_Schedule" />
@@ -522,7 +501,6 @@
           <EntitySet Name="Groups" EntityType="Self.Group" />
           <EntitySet Name="Mentors" EntityType="Self.Mentor" />
           <EntitySet Name="Settings" EntityType="Self.Setting" />
-          <EntitySet Name="Task_Types" EntityType="Self.Task_Types" />
           <EntitySet Name="Tasks" EntityType="Self.Task" />
           <EntitySet Name="Teachers" EntityType="Self.Teacher" />
           <AssociationSet Name="FK_Mentors_mentor_gender_id_TO_Gender_id" Association="Self.FK_Mentors_mentor_gender_id_TO_Gender_id">
@@ -553,10 +531,6 @@
             <End Role="Groups" EntitySet="Groups" />
             <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
-          <AssociationSet Name="FK_Tasks_task_type_id_TO_Task_Types_id" Association="Self.FK_Tasks_task_type_id_TO_Task_Types_id">
-            <End Role="Task_Types" EntitySet="Task_Types" />
-            <End Role="Tasks" EntitySet="Tasks" />
-          </AssociationSet>
           <EntitySet Name="Students" EntityType="StudentEvaluationSystemDBModel.Student" />
           <AssociationSet Name="FK_Students_student_gender_id_TO_Gender_id" Association="StudentEvaluationSystemDBModel.FK_Students_student_gender_id_TO_Gender_id">
             <End Role="Gender" EntitySet="Genders" />
@@ -568,6 +542,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_Tasks_task_student_id_TO_Students_id" Association="StudentEvaluationSystemDBModel.FK_Tasks_task_student_id_TO_Students_id">
             <End Role="Student" EntitySet="Students" />
+            <End Role="Task" EntitySet="Tasks" />
+          </AssociationSet>
+          <EntitySet Name="Task_Types" EntityType="StudentEvaluationSystemDBModel.Task_Types" />
+          <AssociationSet Name="FK_Tasks_task_type_id_TO_Task_Types_id" Association="StudentEvaluationSystemDBModel.FK_Tasks_task_type_id_TO_Task_Types_id">
+            <End Role="Task_Types" EntitySet="Task_Types" />
             <End Role="Task" EntitySet="Tasks" />
           </AssociationSet>
         </EntityContainer>
@@ -583,7 +562,7 @@
           <Property Name="student_github_account" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
           <Property Name="student_info" Type="String" Nullable="false" MaxLength="2500" FixedLength="false" Unicode="true" />
           <Property Name="student_photo" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="student_cap_point" Type="Double" />
+          <Property Name="student_cap_point" Type="Double" Nullable="false" />
           <Property Name="student_group_id" Type="Int32" Nullable="false" />
           <Property Name="student_gender_id" Type="Int32" Nullable="false" />
           <Property Name="student_password" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
@@ -624,6 +603,27 @@
             </Principal>
             <Dependent Role="Task">
               <PropertyRef Name="task_student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Task_Types">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="task_type_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="task_type_rate" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Tasks" Relationship="StudentEvaluationSystemDBModel.FK_Tasks_task_type_id_TO_Task_Types_id" FromRole="Task_Types" ToRole="Task" />
+        </EntityType>
+        <Association Name="FK_Tasks_task_type_id_TO_Task_Types_id">
+          <End Type="StudentEvaluationSystemDBModel.Task_Types" Role="Task_Types" Multiplicity="1" />
+          <End Type="StudentEvaluationSystemDBModel.Task" Role="Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task_Types">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="task_type_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -696,15 +696,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Task_Types">
-            <EntityTypeMapping TypeName="StudentEvaluationSystemDBModel.Task_Types">
-              <MappingFragment StoreEntitySet="Task_Types">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="task_type_name" ColumnName="task_type_name" />
-                <ScalarProperty Name="task_type_rate" ColumnName="task_type_rate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Tasks">
             <EntityTypeMapping TypeName="StudentEvaluationSystemDBModel.Task">
               <MappingFragment StoreEntitySet="Tasks">
@@ -749,6 +740,15 @@
                 <ScalarProperty Name="student_email" ColumnName="student_email" />
                 <ScalarProperty Name="student_surname" ColumnName="student_surname" />
                 <ScalarProperty Name="student_name" ColumnName="student_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Task_Types">
+            <EntityTypeMapping TypeName="StudentEvaluationSystemDBModel.Task_Types">
+              <MappingFragment StoreEntitySet="Task_Types">
+                <ScalarProperty Name="task_type_rate" ColumnName="task_type_rate" />
+                <ScalarProperty Name="task_type_name" ColumnName="task_type_name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

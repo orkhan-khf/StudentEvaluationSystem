@@ -9,6 +9,7 @@ C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSyste
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.AdminpanelPage.resources
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.CurrentMentorsPage.resources
+C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.CurrentStudentsPage.resources
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.CurrentTeachersPage.resources
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.Form1.resources
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.MentorLoginPage.resources
@@ -19,3 +20,5 @@ C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSyste
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.csproj.CoreCompileInputs.cache
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.exe
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.pdb
+C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.csprojResolveAssemblyReference.cache
+C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.TeacherLoggedPage.resources
