@@ -65,6 +65,7 @@
 			this.Task_Type_Name = new System.Windows.Forms.TextBox();
 			this.Task_Type_Rate = new System.Windows.Forms.TextBox();
 			this.Group_Schedules_Tab = new System.Windows.Forms.TabPage();
+			this.Group_Schedules_Table = new System.Windows.Forms.DataGridView();
 			this.Add_New_Group_Schedule_Btn = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.Group_Schedule_End_Time = new System.Windows.Forms.DateTimePicker();
@@ -72,10 +73,12 @@
 			this.Group_Schedule_Begin_Time = new System.Windows.Forms.DateTimePicker();
 			this.Group_Schedule_Name = new System.Windows.Forms.TextBox();
 			this.Group_Types_Tab = new System.Windows.Forms.TabPage();
+			this.Group_Types_Table = new System.Windows.Forms.DataGridView();
 			this.Add_New_Group_Type_Btn = new System.Windows.Forms.Button();
 			this.Group_Type_Name = new System.Windows.Forms.TextBox();
 			this.Group_Schedule_Id = new System.Windows.Forms.ComboBox();
 			this.Groups_Tab = new System.Windows.Forms.TabPage();
+			this.Add_New_Group_Btn = new System.Windows.Forms.Button();
 			this.Group_Start_Date = new System.Windows.Forms.DateTimePicker();
 			this.Group_Name = new System.Windows.Forms.TextBox();
 			this.Group_Mentor_Id = new System.Windows.Forms.ComboBox();
@@ -94,11 +97,9 @@
 			this.Student_Info = new System.Windows.Forms.TextBox();
 			this.Student_Gender = new System.Windows.Forms.ComboBox();
 			this.Student_Password = new System.Windows.Forms.TextBox();
-			this.Settings_Tab = new System.Windows.Forms.TabPage();
 			this.AP_Exit_Btn = new System.Windows.Forms.Button();
-			this.Group_Schedules_Table = new System.Windows.Forms.DataGridView();
-			this.Group_Types_Table = new System.Windows.Forms.DataGridView();
-			this.Add_New_Group_Btn = new System.Windows.Forms.Button();
+			this.Groups_Table = new System.Windows.Forms.DataGridView();
+			this.Show_Current_Students_Btn = new System.Windows.Forms.Button();
 			this.Adminpanel_Gender.SuspendLayout();
 			this.Genders_Tab.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Gender_Table)).BeginInit();
@@ -107,11 +108,12 @@
 			this.Task_Types_Tab.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Task_Types_Table)).BeginInit();
 			this.Group_Schedules_Tab.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Group_Schedules_Table)).BeginInit();
 			this.Group_Types_Tab.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Group_Types_Table)).BeginInit();
 			this.Groups_Tab.SuspendLayout();
 			this.Students_Tab.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.Group_Schedules_Table)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.Group_Types_Table)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.Groups_Table)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// Window_Close_Btn
@@ -139,7 +141,6 @@
 			this.Adminpanel_Gender.Controls.Add(this.Group_Types_Tab);
 			this.Adminpanel_Gender.Controls.Add(this.Groups_Tab);
 			this.Adminpanel_Gender.Controls.Add(this.Students_Tab);
-			this.Adminpanel_Gender.Controls.Add(this.Settings_Tab);
 			this.Adminpanel_Gender.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Adminpanel_Gender.Location = new System.Drawing.Point(12, 31);
 			this.Adminpanel_Gender.Name = "Adminpanel_Gender";
@@ -578,6 +579,20 @@
 			this.Group_Schedules_Tab.Text = "Group Schedules";
 			this.Group_Schedules_Tab.UseVisualStyleBackColor = true;
 			// 
+			// Group_Schedules_Table
+			// 
+			this.Group_Schedules_Table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.Group_Schedules_Table.BackgroundColor = System.Drawing.Color.White;
+			this.Group_Schedules_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.Group_Schedules_Table.GridColor = System.Drawing.Color.Black;
+			this.Group_Schedules_Table.Location = new System.Drawing.Point(6, 160);
+			this.Group_Schedules_Table.MultiSelect = false;
+			this.Group_Schedules_Table.Name = "Group_Schedules_Table";
+			this.Group_Schedules_Table.Size = new System.Drawing.Size(756, 342);
+			this.Group_Schedules_Table.TabIndex = 19;
+			this.Group_Schedules_Table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Group_Schedules_Table_CellEndEdit);
+			this.Group_Schedules_Table.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Group_Schedules_Table_KeyDown);
+			// 
 			// Add_New_Group_Schedule_Btn
 			// 
 			this.Add_New_Group_Schedule_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(205)))));
@@ -655,6 +670,20 @@
 			this.Group_Types_Tab.Text = "Group Types";
 			this.Group_Types_Tab.UseVisualStyleBackColor = true;
 			// 
+			// Group_Types_Table
+			// 
+			this.Group_Types_Table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.Group_Types_Table.BackgroundColor = System.Drawing.Color.White;
+			this.Group_Types_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.Group_Types_Table.GridColor = System.Drawing.Color.Black;
+			this.Group_Types_Table.Location = new System.Drawing.Point(6, 102);
+			this.Group_Types_Table.MultiSelect = false;
+			this.Group_Types_Table.Name = "Group_Types_Table";
+			this.Group_Types_Table.Size = new System.Drawing.Size(756, 400);
+			this.Group_Types_Table.TabIndex = 20;
+			this.Group_Types_Table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Group_Types_Table_CellEndEdit);
+			this.Group_Types_Table.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Group_Types_Table_KeyDown);
+			// 
 			// Add_New_Group_Type_Btn
 			// 
 			this.Add_New_Group_Type_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(205)))));
@@ -692,6 +721,7 @@
 			// 
 			// Groups_Tab
 			// 
+			this.Groups_Tab.Controls.Add(this.Groups_Table);
 			this.Groups_Tab.Controls.Add(this.Add_New_Group_Btn);
 			this.Groups_Tab.Controls.Add(this.Group_Start_Date);
 			this.Groups_Tab.Controls.Add(this.Group_Name);
@@ -704,6 +734,22 @@
 			this.Groups_Tab.TabIndex = 6;
 			this.Groups_Tab.Text = "Groups";
 			this.Groups_Tab.UseVisualStyleBackColor = true;
+			// 
+			// Add_New_Group_Btn
+			// 
+			this.Add_New_Group_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(205)))));
+			this.Add_New_Group_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.Add_New_Group_Btn.FlatAppearance.BorderSize = 0;
+			this.Add_New_Group_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Add_New_Group_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Add_New_Group_Btn.ForeColor = System.Drawing.Color.White;
+			this.Add_New_Group_Btn.Location = new System.Drawing.Point(6, 162);
+			this.Add_New_Group_Btn.Name = "Add_New_Group_Btn";
+			this.Add_New_Group_Btn.Size = new System.Drawing.Size(230, 26);
+			this.Add_New_Group_Btn.TabIndex = 43;
+			this.Add_New_Group_Btn.Text = "Add Group";
+			this.Add_New_Group_Btn.UseVisualStyleBackColor = false;
+			this.Add_New_Group_Btn.Click += new System.EventHandler(this.Add_New_Group_Btn_Click);
 			// 
 			// Group_Start_Date
 			// 
@@ -751,6 +797,7 @@
 			// 
 			// Students_Tab
 			// 
+			this.Students_Tab.Controls.Add(this.Show_Current_Students_Btn);
 			this.Students_Tab.Controls.Add(this.Student_Github_Account);
 			this.Students_Tab.Controls.Add(this.Student_Name);
 			this.Students_Tab.Controls.Add(this.Student_Group);
@@ -778,6 +825,7 @@
 			this.Student_Github_Account.Name = "Student_Github_Account";
 			this.Student_Github_Account.Size = new System.Drawing.Size(230, 26);
 			this.Student_Github_Account.TabIndex = 54;
+			this.Student_Github_Account.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
 			// 
 			// Student_Name
 			// 
@@ -787,6 +835,7 @@
 			this.Student_Name.Name = "Student_Name";
 			this.Student_Name.Size = new System.Drawing.Size(230, 26);
 			this.Student_Name.TabIndex = 44;
+			this.Student_Name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
 			// 
 			// Student_Group
 			// 
@@ -805,6 +854,7 @@
 			this.Student_Surname.Name = "Student_Surname";
 			this.Student_Surname.Size = new System.Drawing.Size(230, 26);
 			this.Student_Surname.TabIndex = 45;
+			this.Student_Surname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
 			// 
 			// Select_Student_Photo_Btn
 			// 
@@ -820,6 +870,7 @@
 			this.Select_Student_Photo_Btn.TabIndex = 52;
 			this.Select_Student_Photo_Btn.Text = "Select Photo";
 			this.Select_Student_Photo_Btn.UseVisualStyleBackColor = false;
+			this.Select_Student_Photo_Btn.Click += new System.EventHandler(this.Select_Student_Photo_Btn_Click);
 			// 
 			// Student_Email
 			// 
@@ -829,6 +880,7 @@
 			this.Student_Email.Name = "Student_Email";
 			this.Student_Email.Size = new System.Drawing.Size(230, 26);
 			this.Student_Email.TabIndex = 46;
+			this.Student_Email.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
 			// 
 			// Add_New_Student_Btn
 			// 
@@ -844,6 +896,7 @@
 			this.Add_New_Student_Btn.TabIndex = 43;
 			this.Add_New_Student_Btn.Text = "Add Student";
 			this.Add_New_Student_Btn.UseVisualStyleBackColor = false;
+			this.Add_New_Student_Btn.Click += new System.EventHandler(this.Add_New_Student_Btn_Click);
 			// 
 			// Student_Phone
 			// 
@@ -853,6 +906,7 @@
 			this.Student_Phone.Name = "Student_Phone";
 			this.Student_Phone.Size = new System.Drawing.Size(230, 26);
 			this.Student_Phone.TabIndex = 47;
+			this.Student_Phone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
 			// 
 			// Student_Password_Confirm
 			// 
@@ -862,6 +916,7 @@
 			this.Student_Password_Confirm.Name = "Student_Password_Confirm";
 			this.Student_Password_Confirm.Size = new System.Drawing.Size(230, 26);
 			this.Student_Password_Confirm.TabIndex = 51;
+			this.Student_Password_Confirm.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
 			// 
 			// Student_Info
 			// 
@@ -871,6 +926,7 @@
 			this.Student_Info.Name = "Student_Info";
 			this.Student_Info.Size = new System.Drawing.Size(230, 135);
 			this.Student_Info.TabIndex = 48;
+			this.Student_Info.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
 			// 
 			// Student_Gender
 			// 
@@ -889,15 +945,7 @@
 			this.Student_Password.Name = "Student_Password";
 			this.Student_Password.Size = new System.Drawing.Size(230, 26);
 			this.Student_Password.TabIndex = 49;
-			// 
-			// Settings_Tab
-			// 
-			this.Settings_Tab.Location = new System.Drawing.Point(4, 27);
-			this.Settings_Tab.Name = "Settings_Tab";
-			this.Settings_Tab.Size = new System.Drawing.Size(768, 505);
-			this.Settings_Tab.TabIndex = 8;
-			this.Settings_Tab.Text = "Settings";
-			this.Settings_Tab.UseVisualStyleBackColor = true;
+			this.Student_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
 			// 
 			// AP_Exit_Btn
 			// 
@@ -915,48 +963,35 @@
 			this.AP_Exit_Btn.UseVisualStyleBackColor = false;
 			this.AP_Exit_Btn.Click += new System.EventHandler(this.Student_Pg_Back_Btn_Click);
 			// 
-			// Group_Schedules_Table
+			// Groups_Table
 			// 
-			this.Group_Schedules_Table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.Group_Schedules_Table.BackgroundColor = System.Drawing.Color.White;
-			this.Group_Schedules_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.Group_Schedules_Table.GridColor = System.Drawing.Color.Black;
-			this.Group_Schedules_Table.Location = new System.Drawing.Point(6, 160);
-			this.Group_Schedules_Table.MultiSelect = false;
-			this.Group_Schedules_Table.Name = "Group_Schedules_Table";
-			this.Group_Schedules_Table.Size = new System.Drawing.Size(759, 342);
-			this.Group_Schedules_Table.TabIndex = 19;
-			this.Group_Schedules_Table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Group_Schedules_Table_CellEndEdit);
-			this.Group_Schedules_Table.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Group_Schedules_Table_KeyDown);
+			this.Groups_Table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.Groups_Table.BackgroundColor = System.Drawing.Color.White;
+			this.Groups_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.Groups_Table.GridColor = System.Drawing.Color.Black;
+			this.Groups_Table.Location = new System.Drawing.Point(6, 194);
+			this.Groups_Table.MultiSelect = false;
+			this.Groups_Table.Name = "Groups_Table";
+			this.Groups_Table.Size = new System.Drawing.Size(756, 308);
+			this.Groups_Table.TabIndex = 21;
+			this.Groups_Table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Groups_Table_CellEndEdit);
+			this.Groups_Table.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Groups_Table_KeyDown);
 			// 
-			// Group_Types_Table
+			// Show_Current_Students_Btn
 			// 
-			this.Group_Types_Table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.Group_Types_Table.BackgroundColor = System.Drawing.Color.White;
-			this.Group_Types_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.Group_Types_Table.GridColor = System.Drawing.Color.Black;
-			this.Group_Types_Table.Location = new System.Drawing.Point(6, 102);
-			this.Group_Types_Table.MultiSelect = false;
-			this.Group_Types_Table.Name = "Group_Types_Table";
-			this.Group_Types_Table.Size = new System.Drawing.Size(759, 400);
-			this.Group_Types_Table.TabIndex = 20;
-			this.Group_Types_Table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Group_Types_Table_CellEndEdit);
-			this.Group_Types_Table.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Group_Types_Table_KeyDown);
-			// 
-			// Add_New_Group_Btn
-			// 
-			this.Add_New_Group_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(205)))));
-			this.Add_New_Group_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.Add_New_Group_Btn.FlatAppearance.BorderSize = 0;
-			this.Add_New_Group_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Add_New_Group_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Add_New_Group_Btn.ForeColor = System.Drawing.Color.White;
-			this.Add_New_Group_Btn.Location = new System.Drawing.Point(6, 162);
-			this.Add_New_Group_Btn.Name = "Add_New_Group_Btn";
-			this.Add_New_Group_Btn.Size = new System.Drawing.Size(230, 26);
-			this.Add_New_Group_Btn.TabIndex = 43;
-			this.Add_New_Group_Btn.Text = "Add Group";
-			this.Add_New_Group_Btn.UseVisualStyleBackColor = false;
+			this.Show_Current_Students_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(56)))), ((int)(((byte)(36)))));
+			this.Show_Current_Students_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.Show_Current_Students_Btn.FlatAppearance.BorderSize = 0;
+			this.Show_Current_Students_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Show_Current_Students_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Show_Current_Students_Btn.ForeColor = System.Drawing.Color.White;
+			this.Show_Current_Students_Btn.Location = new System.Drawing.Point(242, 467);
+			this.Show_Current_Students_Btn.Name = "Show_Current_Students_Btn";
+			this.Show_Current_Students_Btn.Size = new System.Drawing.Size(230, 26);
+			this.Show_Current_Students_Btn.TabIndex = 55;
+			this.Show_Current_Students_Btn.Text = "Show Students";
+			this.Show_Current_Students_Btn.UseVisualStyleBackColor = false;
+			this.Show_Current_Students_Btn.Click += new System.EventHandler(this.Show_Current_Students_Btn_Click);
 			// 
 			// AdminpanelPage
 			// 
@@ -984,14 +1019,15 @@
 			((System.ComponentModel.ISupportInitialize)(this.Task_Types_Table)).EndInit();
 			this.Group_Schedules_Tab.ResumeLayout(false);
 			this.Group_Schedules_Tab.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Group_Schedules_Table)).EndInit();
 			this.Group_Types_Tab.ResumeLayout(false);
 			this.Group_Types_Tab.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Group_Types_Table)).EndInit();
 			this.Groups_Tab.ResumeLayout(false);
 			this.Groups_Tab.PerformLayout();
 			this.Students_Tab.ResumeLayout(false);
 			this.Students_Tab.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.Group_Schedules_Table)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.Group_Types_Table)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.Groups_Table)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -1008,7 +1044,6 @@
 		private System.Windows.Forms.TabPage Group_Types_Tab;
 		private System.Windows.Forms.TabPage Groups_Tab;
 		private System.Windows.Forms.TabPage Students_Tab;
-		private System.Windows.Forms.TabPage Settings_Tab;
 		private System.Windows.Forms.TextBox Gender_Name_Textbox;
 		private System.Windows.Forms.Button AP_Exit_Btn;
 		private System.Windows.Forms.Button AP_Gender_Add_Btn;
@@ -1068,5 +1103,7 @@
 		private System.Windows.Forms.DataGridView Group_Schedules_Table;
 		private System.Windows.Forms.DataGridView Group_Types_Table;
 		private System.Windows.Forms.Button Add_New_Group_Btn;
+		private System.Windows.Forms.DataGridView Groups_Table;
+		private System.Windows.Forms.Button Show_Current_Students_Btn;
 	}
 }

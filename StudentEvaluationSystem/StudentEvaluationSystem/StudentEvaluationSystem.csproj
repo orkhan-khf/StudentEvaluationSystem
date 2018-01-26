@@ -82,6 +82,12 @@
     <Compile Include="CurrentMentorsPage.Designer.cs">
       <DependentUpon>CurrentMentorsPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrentStudentsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CurrentStudentsPage.Designer.cs">
+      <DependentUpon>CurrentStudentsPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="CurrentTeachersPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CurrentMentorsPage.resx">
       <DependentUpon>CurrentMentorsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrentStudentsPage.resx">
+      <DependentUpon>CurrentStudentsPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CurrentTeachersPage.resx">
       <DependentUpon>CurrentTeachersPage.cs</DependentUpon>

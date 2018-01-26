@@ -32,7 +32,7 @@ namespace StudentEvaluationSystem
 		//icinde placeholder olan textboxlarin icinde keypress olanda bosaldir ve yazi rengini qara edir (password textboslarin Name'sinde mutleq Password sozu kecmelidir ki, * isaresi ile kamuflaj olsun)
 		public void PlaceHolderEdit(TextBox _textbox, string _placeholder)
         {
-            if (_textbox.Text == _placeholder)
+			if (_textbox.Text == _placeholder)
             {
                 _textbox.Text = "";
                 _textbox.ForeColor = Color.Black;
@@ -67,11 +67,11 @@ namespace StudentEvaluationSystem
                 {
                     placeHolderString = _password_field_placeholder;
                 }
-                this.PlaceHolderEdit(currentTextBox, placeHolderString);
+                PlaceHolderEdit(currentTextBox, placeHolderString);
             }
         }
 		//overload 1 for TextBoxChanged method (adminpanelde gender, teacher, mentor elave etme textboxlarini sifirlayir)
-		public void TextBoxChanged(KeyEventArgs _e, object _sender, string field_1, string field_1_placeholder, string field_2, string field_2_placeholder, string field_3, string field_3_placeholder, string field_4, string field_4_placeholder, string field_5, string field_5_placeholder, string field_6, string field_6_placeholder, string field_7, string field_7_placeholder, string field_8, string field_8_placeholder, string field_9, string field_9_placeholder, string field_10, string field_10_placeholder, string field_11, string field_11_placeholder, string field_12, string field_12_placeholder, string field_13, string field_13_placeholder, string field_14, string field_14_placeholder, string field_15, string field_15_placeholder, string field_16, string field_16_placeholder, string field_17, string field_17_placeholder, string field_18, string field_18_placeholder, string field_19, string field_19_placeholder, string field_20, string field_20_placeholder)
+		public void TextBoxChanged(KeyEventArgs _e, object _sender, string field_1, string field_1_placeholder, string field_2, string field_2_placeholder, string field_3, string field_3_placeholder, string field_4, string field_4_placeholder, string field_5, string field_5_placeholder, string field_6, string field_6_placeholder, string field_7, string field_7_placeholder, string field_8, string field_8_placeholder, string field_9, string field_9_placeholder, string field_10, string field_10_placeholder, string field_11, string field_11_placeholder, string field_12, string field_12_placeholder, string field_13, string field_13_placeholder, string field_14, string field_14_placeholder, string field_15, string field_15_placeholder, string field_16, string field_16_placeholder, string field_17, string field_17_placeholder, string field_18, string field_18_placeholder, string field_19, string field_19_placeholder, string field_20, string field_20_placeholder, string field_21, string field_21_placeholder, string field_22, string field_22_placeholder, string field_23, string field_23_placeholder, string field_24, string field_24_placeholder, string field_25, string field_25_placeholder, string field_26, string field_26_placeholder, string field_27, string field_27_placeholder, string field_28, string field_28_placeholder)
 		{
 			//istifadeci enterlere klik edende hecne etmesin. (bu olmayanda entere klik edende istifadecinin daxil etdiyi texti bosaldirdi)
 			if (_e.KeyCode == Keys.Enter)
@@ -161,6 +161,38 @@ namespace StudentEvaluationSystem
 				else if (currentTextBox.Name == field_20)
 				{
 					placeHolderString = field_20_placeholder;
+				}
+				else if (currentTextBox.Name == field_21)
+				{
+					placeHolderString = field_21_placeholder;
+				}
+				else if (currentTextBox.Name == field_22)
+				{
+					placeHolderString = field_22_placeholder;
+				}
+				else if (currentTextBox.Name == field_23)
+				{
+					placeHolderString = field_23_placeholder;
+				}
+				else if (currentTextBox.Name == field_24)
+				{
+					placeHolderString = field_24_placeholder;
+				}
+				else if (currentTextBox.Name == field_25)
+				{
+					placeHolderString = field_25_placeholder;
+				}
+				else if (currentTextBox.Name == field_26)
+				{
+					placeHolderString = field_26_placeholder;
+				}
+				else if (currentTextBox.Name == field_27)
+				{
+					placeHolderString = field_27_placeholder;
+				}
+				else if (currentTextBox.Name == field_28)
+				{
+					placeHolderString = field_28_placeholder;
 				}
 				this.PlaceHolderEdit(currentTextBox, placeHolderString);
 			}
@@ -283,6 +315,25 @@ namespace StudentEvaluationSystem
 			_grid_table.DataSource = _table.ToList();
 			_grid_table.Columns.Remove("Group_Schedule");
 			_grid_table.Columns.Remove("Groups");
+		}
+		//overload 6
+		public void FillDataGridView(DataGridView _grid_table, DbSet<Group> _table)
+		{
+			_grid_table.DataSource = _table.ToList();
+			_grid_table.Columns.Remove("Group_Types");
+			_grid_table.Columns.Remove("Mentor");
+			_grid_table.Columns.Remove("Teacher");
+			_grid_table.Columns.Remove("Tasks");
+			_grid_table.Columns.Remove("Students");
+		}
+		//overload 7
+		public void FillDataGridView(DataGridView _grid_table, DbSet<Student> _table)
+		{
+			_grid_table.DataSource = _table.ToList();
+			_grid_table.Columns.Remove("student_password");
+			_grid_table.Columns.Remove("Gender");
+			_grid_table.Columns.Remove("Group");
+			_grid_table.Columns.Remove("Tasks");
 		}
 
 
@@ -444,8 +495,70 @@ namespace StudentEvaluationSystem
 				}
 			}
 		}
-		//overload 4
+		//overload 5
 		public void DataGridViewDeleteSelectedRows(KeyEventArgs _e, DataGridView _grid_table, DbSet<Group_Types> _table)
+		{
+			if (_e.KeyCode == Keys.Delete)
+			{
+				if (MessageBox.Show("Are you sure you want to delete this data?", "Warning", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+				{
+					try
+					{
+						int selected_row_id = Convert.ToInt32(_grid_table.SelectedCells[0].Value);
+						var element = _table.SingleOrDefault(r => r.id == selected_row_id);
+						if (element != null)
+						{
+							_table.Remove(element);
+							db.SaveChanges();
+							SuccessMsg("Row deleted!");
+							_grid_table.DataSource = null;
+							FillDataGridView(_grid_table, _table);
+						}
+						else
+						{
+							ErrMsg("Row not found! Please close and open window than try again.");
+						}
+					}
+					catch
+					{
+						ErrMsg("Operation failed. Please try again!");
+					}
+				}
+			}
+		}
+		//overload 6
+		public void DataGridViewDeleteSelectedRows(KeyEventArgs _e, DataGridView _grid_table, DbSet<Group> _table)
+		{
+			if (_e.KeyCode == Keys.Delete)
+			{
+				if (MessageBox.Show("Are you sure you want to delete this data?", "Warning", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+				{
+					try
+					{
+						int selected_row_id = Convert.ToInt32(_grid_table.SelectedCells[0].Value);
+						var element = _table.SingleOrDefault(r => r.id == selected_row_id);
+						if (element != null)
+						{
+							_table.Remove(element);
+							db.SaveChanges();
+							SuccessMsg("Row deleted!");
+							_grid_table.DataSource = null;
+							FillDataGridView(_grid_table, _table);
+						}
+						else
+						{
+							ErrMsg("Row not found! Please close and open window than try again.");
+						}
+					}
+					catch
+					{
+						ErrMsg("Operation failed. Please try again!");
+					}
+				}
+			}
+		}
+		//overload 7
+		public void DataGridViewDeleteSelectedRows(KeyEventArgs _e, DataGridView _grid_table, DbSet<Student> _table)
 		{
 			if (_e.KeyCode == Keys.Delete)
 			{
@@ -527,10 +640,18 @@ namespace StudentEvaluationSystem
 			_comboBox.DisplayMember = "teacher_surname";
 			_comboBox.ValueMember = "id";
 		}
+		//overload 4
 		public void FillCombobox(ComboBox _comboBox, DbSet<Mentor> _table)
 		{
 			_comboBox.DataSource = _table.ToList();
 			_comboBox.DisplayMember = "mentor_surname";
+			_comboBox.ValueMember = "id";
+		}
+		//overload 5
+		public void FillCombobox(ComboBox _comboBox, DbSet<Group> _table)
+		{
+			_comboBox.DataSource = _table.ToList();
+			_comboBox.DisplayMember = "group_name";
 			_comboBox.ValueMember = "id";
 		}
 
@@ -593,6 +714,17 @@ namespace StudentEvaluationSystem
 				string a = Convert.ToString(selectedRow.Cells[_cell_name].Value);
 				_pictureBox.ImageLocation = @"../../images/" + a;
 			}
+		}
+
+
+
+
+
+		//teacher, mentor ve student elave edende textboxlar sifirlananda password textboxlari * isaresinde qalir onu sifirlayir
+		public void ResetPasswordTextboxes(TextBox _pass, TextBox _passConfirm)
+		{
+			_pass.PasswordChar = '\0';
+			_passConfirm.PasswordChar = '\0';
 		}
 }
 }
