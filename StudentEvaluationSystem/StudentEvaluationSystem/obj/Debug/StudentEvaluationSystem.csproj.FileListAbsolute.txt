@@ -22,3 +22,5 @@ C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSyste
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.pdb
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.csprojResolveAssemblyReference.cache
 C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.TeacherLoggedPage.resources
+C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.StudentLoggedPage.resources
+C:\Users\Gamer\Desktop\git master\StudentEvaluationSystem\StudentEvaluationSystem\obj\Debug\StudentEvaluationSystem.MentorLoggedPage.resources

@@ -42,7 +42,7 @@ namespace StudentEvaluationSystem
 
         private void Student_Pg_Student_Login_Btn_Click(object sender, EventArgs e)
         {
-            CommonMethods.Login(this.Student_Login_Email, this.Student_Login_Password, CommonMethods.db.Students);
+            CommonMethods.Login(Student_Login_Email, Student_Login_Password, CommonMethods.db.Students, this);
         }
     }
 }

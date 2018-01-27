@@ -32,9 +32,10 @@ namespace StudentEvaluationSystem
         private void TeacherLoggedPage_Load(object sender, EventArgs e)
         {
             CommonMethods.FillCombobox(Add_Task_Task_Type_Id, CommonMethods.db.Task_Types);
-            CommonMethods.FillCombobox(Add_Task_Group, CommonMethods.db.Groups,19);
+            CommonMethods.FillCombobox(Add_Task_Group, CommonMethods.db.Groups, _logged_teacher_id);
             CommonMethods.FillCombobox(Add_Task_Student, CommonMethods.db.Students, CommonMethods.db.Groups, CommonMethods.db.Teachers, _logged_teacher_id);
-            CommonMethods.FillDataGridView(Add_Task_Student_Table, CommonMethods.db.Tasks);
+            CommonMethods.FillDataGridView(Add_Task_Student_Table, CommonMethods.db.Students, CommonMethods.db.Task_Types, CommonMethods.db.Groups, CommonMethods.db.Teachers, CommonMethods.db.Tasks, _logged_teacher_id);
+            CommonMethods.FillDataGridView(Add_Task_All_Student_Table, CommonMethods.db.Genders, CommonMethods.db.Groups, CommonMethods.db.Students,  CommonMethods.db.Teachers, _logged_teacher_id);
         }
 
         private void Add_Task_Btn_Click(object sender, EventArgs e)
@@ -72,14 +73,9 @@ namespace StudentEvaluationSystem
             }
         }
 
-        private void Add_Task_Student_Table_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void Add_Task_All_Student_Table_SelectionChanged(object sender, EventArgs e)
         {
-            CommonMethods.UpdateDataGridTable(e, Add_Task_Student_Table);
-        }
-
-        private void Add_Task_Student_Table_KeyDown(object sender, KeyEventArgs e)
-        {
-            CommonMethods.DataGridViewDeleteSelectedRows(e, Add_Task_Student_Table, CommonMethods.db.Tasks);
+            CommonMethods.ChangePictureBoxSource(Add_Task_All_Student_Table, Teachers_Selected_Student_Picture, "student_photo");
         }
     }
 }

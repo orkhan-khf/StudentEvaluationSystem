@@ -219,8 +219,8 @@ namespace StudentEvaluationSystem
 
 
 
-		//Teacher / Student / Mentor / Admin login method'lari
-		public void Login(TextBox _email,TextBox _password,DbSet<Teacher> _table, Form _current_login_page)
+        //Teacher / Mentor / Student / Admin login method'lari
+        public void Login(TextBox _email,TextBox _password,DbSet<Teacher> _table, Form _current_login_page)
         {
 			if (_email.Text == "admin" && _password.Text == "admin")
 			{
@@ -244,14 +244,40 @@ namespace StudentEvaluationSystem
 				}
 			}
         }
-        public void Login(TextBox _email, TextBox _password, DbSet<Student> _table)
+        public void Login(TextBox _email, TextBox _password, DbSet<Mentor> _table, Form _current_login_page)
         {
-            MessageBox.Show("Student login");
+            string md5Pass = MD5Hash(_password.Text);
+            var query = _table.Where(p => p.mentor_email == _email.Text && p.mentor_password == md5Pass);
+            if (query.Count() > 0)
+            {
+                foreach (var item in query)
+                {
+                    MentorLoggedPage.logged_mentor_id = item.id;
+                }
+                OpenAnotherForm(_current_login_page, new MentorLoggedPage());
+            }
+            else
+            {
+                MessageBox.Show("Wrong Email or Password!");
+            }
         }
-        public void Login(TextBox _email, TextBox _password, DbSet<Mentor> _table)
+        public void Login(TextBox _email, TextBox _password, DbSet<Student> _table, Form _current_login_page)
         {
-            MessageBox.Show("Mentor login");
-		}
+            string md5Pass = MD5Hash(_password.Text);
+            var query = _table.Where(p => p.student_email == _email.Text && p.student_password == md5Pass);
+            if (query.Count() > 0)
+            {
+                foreach (var item in query)
+                {
+                    StudentLoggedPage.logged_student_id = item.id;
+                }
+                OpenAnotherForm(_current_login_page, new StudentLoggedPage());
+            }
+            else
+            {
+                MessageBox.Show("Wrong Email or Password!");
+            }
+        }
 
 
 
@@ -346,6 +372,74 @@ namespace StudentEvaluationSystem
             _grid_table.Columns.Remove("Student");
             _grid_table.Columns.Remove("Group");
             _grid_table.Columns.Remove("Task_Types");
+        }
+        //overload 9
+        public void FillDataGridView(DataGridView _grid_table, DbSet<Gender> _table_gender, DbSet<Group> _table_groups, DbSet<Student> _table_students, DbSet<Teacher> _table_teacher, int _teacher_id)
+        {
+            var query = from s in _table_students
+                        join g in _table_groups on s.student_group_id equals g.id
+                        join gen in _table_gender on s.student_gender_id equals gen.id
+                        join t in _table_teacher on g.group_teacher_id equals t.id
+                        where t.id == _teacher_id
+                        select new {s.student_name, s.student_surname, s.student_email, s.student_phone, s.student_github_account, s.student_cap_point, g.group_name, gen.gender_name, s.student_info, s.student_photo,};
+            _grid_table.DataSource = query.ToList();
+        }
+        //overload 10
+        public void FillDataGridView(DataGridView _grid_table, DbSet<Student> _table_student, DbSet<Task_Types> _table_task_types, DbSet<Group> _table_group, DbSet<Teacher> _table_teacher, DbSet<Task> _table_task, int _teacher_id)
+        {
+            var query = from t in _table_task
+                        join g in _table_group on t.task_group_id equals g.id
+                        join s in _table_student on t.task_student_id equals s.id
+                        join t_type in _table_task_types on t.task_type_id equals t_type.id
+                        join tc in _table_teacher on g.group_teacher_id equals tc.id
+                        where tc.id == _teacher_id
+                        select new {t_type.task_type_name, t.task_start_date, t.task_end_date, t.task_point, t.task_source, t.task_note, g.group_name, s.student_surname};
+            _grid_table.DataSource = query.ToList();
+        }
+        //overload 11
+        public void FillDataGridView(DataGridView _grid_table, DbSet<Student> _table_student, DbSet<Task_Types> _table_task_types, DbSet<Task> _table_task, DbSet<Teacher> _table_teacher, int _student_id)
+        {
+            var query = from s in _table_student
+                        join t in _table_task on s.id equals t.task_student_id
+                        join t_type in _table_task_types on t.task_type_id equals t_type.id
+                        where s.id == _student_id
+                        select new { t_type.task_type_name, t.task_start_date, t.task_end_date, t.task_point, t.task_source, t.task_note};
+            _grid_table.DataSource = query.ToList();
+        }
+        //overload 12
+        public void FillDataGridView(DataGridView _grid_table, DbSet<Student> _table_student, DbSet<Gender> _table_gender, DbSet<Group> _table_group, int _student_id)
+        {
+            var query = from s in _table_student
+                        join g in _table_gender on s.student_gender_id equals g.id
+                        join grp in _table_group on s.student_group_id equals grp.id
+                        where s.id == _student_id
+                        select new { s.student_name, s.student_surname, s.student_cap_point, grp.group_name, s.student_email, s.student_phone, s.student_github_account, s.student_info, s.student_photo, g.gender_name };
+            _grid_table.DataSource = query.ToList();
+        }
+        //overload 13
+        public void FillDataGridView(DataGridView _grid_table, DbSet<Student> _table_student, DbSet<Task_Types> _table_task_types, DbSet<Group> _table_group, DbSet<Teacher> _table_teacher, DbSet<Mentor> _table_mentor, DbSet<Task> _table_task, int _mentor_id)
+        {
+            var query = from t in _table_task
+                        join g in _table_group on t.task_group_id equals g.id
+                        join s in _table_student on t.task_student_id equals s.id
+                        join t_type in _table_task_types on t.task_type_id equals t_type.id
+                        join tc in _table_teacher on g.group_teacher_id equals tc.id
+                        join m in _table_mentor on g.group_mentor_id equals m.id
+                        where m.id == _mentor_id
+                        select new { t_type.task_type_name, g.group_name,s.student_name, s.student_surname, t.task_start_date, t.task_end_date, t.task_point, t.task_source, t.task_note, tc.teacher_name, tc.teacher_surname  };
+            _grid_table.DataSource = query.ToList();
+        }
+        //overload 14
+        public void FillDataGridView(DataGridView _grid_table, DbSet<Gender> _table_gender, DbSet<Group> _table_groups, DbSet<Mentor> _table_mentor, DbSet<Teacher> _table_teacher, DbSet<Student> _table_students, int _mentor_id)
+        {
+            var query = from s in _table_students
+                        join g in _table_groups on s.student_group_id equals g.id
+                        join gen in _table_gender on s.student_gender_id equals gen.id
+                        join t in _table_teacher on g.group_teacher_id equals t.id
+                        join m in _table_mentor on g.group_mentor_id equals m.id
+                        where m.id == _mentor_id
+                        select new { s.student_name, s.student_surname, s.student_email, s.student_phone, s.student_github_account, s.student_cap_point, g.group_name, gen.gender_name, s.student_info};
+            _grid_table.DataSource = query.ToList();
         }
 
 
@@ -600,37 +694,6 @@ namespace StudentEvaluationSystem
 				}
 			}
 		}
-        //overload 7
-        public void DataGridViewDeleteSelectedRows(KeyEventArgs _e, DataGridView _grid_table, DbSet<Task> _table)
-        {
-            if (_e.KeyCode == Keys.Delete)
-            {
-                if (MessageBox.Show("Are you sure you want to delete this data?", "Warning", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
-                {
-                    try
-                    {
-                        int selected_row_id = Convert.ToInt32(_grid_table.SelectedCells[0].Value);
-                        var element = _table.SingleOrDefault(r => r.id == selected_row_id);
-                        if (element != null)
-                        {
-                            _table.Remove(element);
-                            db.SaveChanges();
-                            SuccessMsg("Row deleted!");
-                            _grid_table.DataSource = null;
-                            FillDataGridView(_grid_table, _table);
-                        }
-                        else
-                        {
-                            ErrMsg("Row not found! Please close and open window than try again.");
-                        }
-                    }
-                    catch
-                    {
-                        ErrMsg("Operation failed. Please try again!");
-                    }
-                }
-            }
-        }
 
 
 
@@ -678,17 +741,30 @@ namespace StudentEvaluationSystem
 		//overload 3
 		public void FillCombobox(ComboBox _comboBox, DbSet<Teacher> _table)
 		{
-			_comboBox.DataSource = _table.ToList();
-			_comboBox.DisplayMember = "teacher_surname";
-			_comboBox.ValueMember = "id";
-		}
+            var query = _table.Select(row => row);
+            IList<FullName> teachers = new List<FullName>();
+            foreach (var item in query.ToList())
+            {
+                teachers.Add(new FullName() { id = item.id , fullname = item.teacher_name + " " + item.teacher_surname });
+            }
+            _comboBox.DataSource = teachers.ToList();
+            _comboBox.DisplayMember = "fullname";
+            _comboBox.ValueMember = "id";
+        }
+
 		//overload 4
 		public void FillCombobox(ComboBox _comboBox, DbSet<Mentor> _table)
 		{
-			_comboBox.DataSource = _table.ToList();
-			_comboBox.DisplayMember = "mentor_surname";
-			_comboBox.ValueMember = "id";
-		}
+            var query = _table.Select(row => row);
+            IList<FullName> teachers = new List<FullName>();
+            foreach (var item in query.ToList())
+            {
+                teachers.Add(new FullName() { id = item.id, fullname = item.mentor_name + " " + item.mentor_surname });
+            }
+            _comboBox.DataSource = teachers.ToList();
+            _comboBox.DisplayMember = "fullname";
+            _comboBox.ValueMember = "id";
+        }
 		//overload 5
 		public void FillCombobox(ComboBox _comboBox, DbSet<Group> _table)
 		{

@@ -49,7 +49,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Add_Task_Btn = new System.Windows.Forms.Button();
             this.Add_Task_Student_Table = new System.Windows.Forms.DataGridView();
+            this.Add_Task_All_Student_Table = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Teachers_Selected_Student_Picture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Add_Task_Student_Table)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Add_Task_All_Student_Table)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Teachers_Selected_Student_Picture)).BeginInit();
             this.SuspendLayout();
             // 
             // AP_Exit_Btn
@@ -257,20 +263,65 @@
             // 
             // Add_Task_Student_Table
             // 
+            this.Add_Task_Student_Table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Add_Task_Student_Table.BackgroundColor = System.Drawing.Color.White;
             this.Add_Task_Student_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Add_Task_Student_Table.Location = new System.Drawing.Point(325, 31);
+            this.Add_Task_Student_Table.Location = new System.Drawing.Point(325, 49);
             this.Add_Task_Student_Table.Name = "Add_Task_Student_Table";
-            this.Add_Task_Student_Table.Size = new System.Drawing.Size(963, 150);
+            this.Add_Task_Student_Table.Size = new System.Drawing.Size(963, 190);
             this.Add_Task_Student_Table.TabIndex = 50;
-            this.Add_Task_Student_Table.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Add_Task_Student_Table_CellEndEdit);
-            this.Add_Task_Student_Table.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Add_Task_Student_Table_KeyDown);
+            // 
+            // Add_Task_All_Student_Table
+            // 
+            this.Add_Task_All_Student_Table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Add_Task_All_Student_Table.BackgroundColor = System.Drawing.Color.White;
+            this.Add_Task_All_Student_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Add_Task_All_Student_Table.Location = new System.Drawing.Point(325, 273);
+            this.Add_Task_All_Student_Table.Name = "Add_Task_All_Student_Table";
+            this.Add_Task_All_Student_Table.Size = new System.Drawing.Size(963, 190);
+            this.Add_Task_All_Student_Table.TabIndex = 51;
+            this.Add_Task_All_Student_Table.SelectionChanged += new System.EventHandler(this.Add_Task_All_Student_Table_SelectionChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(205)))));
+            this.label9.Location = new System.Drawing.Point(756, 252);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(101, 18);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "Your Students";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(134)))), ((int)(((byte)(205)))));
+            this.label10.Location = new System.Drawing.Point(781, 28);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 18);
+            this.label10.TabIndex = 53;
+            this.label10.Text = "Tasks";
+            // 
+            // Teachers_Selected_Student_Picture
+            // 
+            this.Teachers_Selected_Student_Picture.Location = new System.Drawing.Point(325, 469);
+            this.Teachers_Selected_Student_Picture.Name = "Teachers_Selected_Student_Picture";
+            this.Teachers_Selected_Student_Picture.Size = new System.Drawing.Size(143, 187);
+            this.Teachers_Selected_Student_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Teachers_Selected_Student_Picture.TabIndex = 54;
+            this.Teachers_Selected_Student_Picture.TabStop = false;
             // 
             // TeacherLoggedPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 700);
+            this.Controls.Add(this.Teachers_Selected_Student_Picture);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.Add_Task_All_Student_Table);
             this.Controls.Add(this.Add_Task_Student_Table);
             this.Controls.Add(this.Add_Task_Btn);
             this.Controls.Add(this.label8);
@@ -297,6 +348,8 @@
             this.Text = "TeacherLoggedPage";
             this.Load += new System.EventHandler(this.TeacherLoggedPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Add_Task_Student_Table)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Add_Task_All_Student_Table)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Teachers_Selected_Student_Picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,5 +377,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button Add_Task_Btn;
         private System.Windows.Forms.DataGridView Add_Task_Student_Table;
+        private System.Windows.Forms.DataGridView Add_Task_All_Student_Table;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox Teachers_Selected_Student_Picture;
     }
 }
