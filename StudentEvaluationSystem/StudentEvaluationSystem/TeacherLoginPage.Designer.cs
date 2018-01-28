@@ -49,7 +49,8 @@
             this.Window_Close_Btn.Location = new System.Drawing.Point(754, 0);
             this.Window_Close_Btn.Name = "Window_Close_Btn";
             this.Window_Close_Btn.Size = new System.Drawing.Size(46, 25);
-            this.Window_Close_Btn.TabIndex = 1;
+            this.Window_Close_Btn.TabIndex = 0;
+            this.Window_Close_Btn.TabStop = false;
             this.Window_Close_Btn.UseVisualStyleBackColor = false;
             this.Window_Close_Btn.Click += new System.EventHandler(this.Window_Close_Btn_Click);
             // 
@@ -71,7 +72,7 @@
             this.Teacher_Login_Email.Multiline = true;
             this.Teacher_Login_Email.Name = "Teacher_Login_Email";
             this.Teacher_Login_Email.Size = new System.Drawing.Size(230, 26);
-            this.Teacher_Login_Email.TabIndex = 3;
+            this.Teacher_Login_Email.TabIndex = 1;
             this.Teacher_Login_Email.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
             // 
             // Teacher_Login_Password
@@ -81,7 +82,7 @@
             this.Teacher_Login_Password.Multiline = true;
             this.Teacher_Login_Password.Name = "Teacher_Login_Password";
             this.Teacher_Login_Password.Size = new System.Drawing.Size(230, 26);
-            this.Teacher_Login_Password.TabIndex = 4;
+            this.Teacher_Login_Password.TabIndex = 2;
             this.Teacher_Login_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
             // 
             // Teacher_Pg_Teacher_Login_Btn
@@ -95,7 +96,7 @@
             this.Teacher_Pg_Teacher_Login_Btn.Location = new System.Drawing.Point(285, 346);
             this.Teacher_Pg_Teacher_Login_Btn.Name = "Teacher_Pg_Teacher_Login_Btn";
             this.Teacher_Pg_Teacher_Login_Btn.Size = new System.Drawing.Size(230, 26);
-            this.Teacher_Pg_Teacher_Login_Btn.TabIndex = 5;
+            this.Teacher_Pg_Teacher_Login_Btn.TabIndex = 3;
             this.Teacher_Pg_Teacher_Login_Btn.Text = "Login";
             this.Teacher_Pg_Teacher_Login_Btn.UseVisualStyleBackColor = false;
             this.Teacher_Pg_Teacher_Login_Btn.Click += new System.EventHandler(this.Teacher_Pg_Teacher_Login_Btn_Click);
@@ -111,7 +112,7 @@
             this.Teacher_Pg_Back_Btn.Location = new System.Drawing.Point(285, 378);
             this.Teacher_Pg_Back_Btn.Name = "Teacher_Pg_Back_Btn";
             this.Teacher_Pg_Back_Btn.Size = new System.Drawing.Size(230, 26);
-            this.Teacher_Pg_Back_Btn.TabIndex = 6;
+            this.Teacher_Pg_Back_Btn.TabIndex = 4;
             this.Teacher_Pg_Back_Btn.Text = "Back";
             this.Teacher_Pg_Back_Btn.UseVisualStyleBackColor = false;
             this.Teacher_Pg_Back_Btn.Click += new System.EventHandler(this.Teacher_Pg_Back_Btn_Click);

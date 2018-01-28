@@ -446,6 +446,97 @@ namespace StudentEvaluationSystem
 
 
 
+
+        //Students CAP point calculater
+        public void CalcStudentCAP_Point(int student_id, DbSet<Task> _table_task, DbSet<Task_Types> _table_task_types, DbSet<Student> _table_student)
+        {
+            double QMT_ortalama = new double();
+            double UMT_ortalama = new double();
+            double ML_ortalama = new double();
+            double D_ortalama = new double();
+
+            var student_tasks = from t in _table_task
+                        join tt in _table_task_types on t.task_type_id equals tt.id
+                        where t.task_student_id == student_id
+                        select new { student_id, t.task_point, tt.task_type_rate, t.task_type_id };
+            bool arasdirma = true;
+            bool praktiki = true;
+            bool software_fundamentals = true;
+            bool programming_html5jscss3 = true;
+            bool programming_csharp = true;
+            bool programming_aspmvc = true;
+            bool mezuniyyet = true;
+            bool davamiyyet = true;
+
+            int total_task_count = student_tasks.Count();
+
+            int arasdirma_task_count = student_tasks.Where( a => a.task_type_id == 2).Count();
+            int arasdirma_task_total_point_count = student_tasks.Where(a => a.task_type_id == 2).Select(a=>a.task_point).Sum();
+
+            int praktiki_task_count = student_tasks.Where(p => p.task_type_id == 10).Count();
+            int praktiki_task_total_point_count = student_tasks.Where(p => p.task_type_id == 10).Select(a => a.task_point).Sum();
+
+            foreach (var task in student_tasks.ToList())
+            {
+                //Arasdirma
+                if (task.task_type_id == 2 && arasdirma)
+                {
+                    //Bu hissede ona gore +1 qoyulur ki, Samir m. gonderdiyi excell table'da mezuniyyet layihesi front-end/back-end ayri ayri
+                    //xal verilir deye, arasdirma taski hesablananda umumi task sayi duz gelmir 1 eksik gelir hemise.
+                    QMT_ortalama += arasdirma_task_total_point_count * task.task_type_rate / (total_task_count + 1);
+                    arasdirma = false;
+                }
+                //Praktiki 
+                if (task.task_type_id == 10 && praktiki)
+                {
+                    QMT_ortalama += praktiki_task_total_point_count * task.task_type_rate / (arasdirma_task_count + praktiki_task_count);
+                    praktiki = false;
+                }
+                //Software Fundamentals
+                if (task.task_type_id == 3 && software_fundamentals)
+                {
+                    UMT_ortalama += student_tasks.Where(a => a.task_type_id == 3).Select(a => a.task_point).Sum() * task.task_type_rate;
+                    software_fundamentals = false;
+                }
+                //Programming in html5 with js and css3
+                if (task.task_type_id == 4 && programming_html5jscss3)
+                {
+                    UMT_ortalama += student_tasks.Where(a => a.task_type_id == 4).Select(a => a.task_point).Sum() * task.task_type_rate;
+                    programming_html5jscss3 = false;
+                }
+                //Programming in C#
+                if (task.task_type_id == 5 && programming_csharp)
+                {
+                    UMT_ortalama += student_tasks.Where(a => a.task_type_id == 5).Select(a => a.task_point).Sum() * task.task_type_rate;
+                    programming_csharp = false;
+                }
+                //Programming Microsoft ASP.NET MVC
+                if (task.task_type_id == 6 && programming_aspmvc)
+                {
+                    UMT_ortalama += student_tasks.Where(a => a.task_type_id == 6).Select(a => a.task_point).Sum() * task.task_type_rate;
+                    programming_aspmvc = false;
+                }
+                //Mezuniyyet
+                if (task.task_type_id == 11 && mezuniyyet)
+                {
+                    ML_ortalama += student_tasks.Where(a => a.task_type_id == 11).Select(a => a.task_point).Sum() * task.task_type_rate;
+                    mezuniyyet = false;
+                }
+                //Davamiyyet
+                if (task.task_type_id == 12 && davamiyyet)
+                {
+                    D_ortalama += student_tasks.Where(a => a.task_type_id == 12).Select(a => a.task_point).Sum() * task.task_type_rate;
+                    davamiyyet = false;
+                }
+            }
+            double umumi_ortalama = QMT_ortalama + UMT_ortalama + ML_ortalama + D_ortalama;
+            Student CAP_POINT = (from s in _table_student where s.id == student_id select s).SingleOrDefault();
+            CAP_POINT.student_cap_point = umumi_ortalama;
+            db.SaveChanges();
+        }
+
+
+
         //datagridview delete basanda silsin
         public void DataGridViewDeleteSelectedRows(KeyEventArgs _e, DataGridView _grid_table, DbSet<Gender> _table)
 		{
@@ -898,5 +989,10 @@ namespace StudentEvaluationSystem
     {
         public string groupName { get; set; }
         public int id { get; set; }
+    }
+    class GetTaskTypeRate
+    {
+        public int id { get; set; }
+        public double rate { get; set; }
     }
 }

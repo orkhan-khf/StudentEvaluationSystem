@@ -69,7 +69,7 @@
             this.AP_Exit_Btn.Location = new System.Drawing.Point(535, 662);
             this.AP_Exit_Btn.Name = "AP_Exit_Btn";
             this.AP_Exit_Btn.Size = new System.Drawing.Size(230, 26);
-            this.AP_Exit_Btn.TabIndex = 12;
+            this.AP_Exit_Btn.TabIndex = 10;
             this.AP_Exit_Btn.Text = "Exit";
             this.AP_Exit_Btn.UseVisualStyleBackColor = false;
             this.AP_Exit_Btn.Click += new System.EventHandler(this.AP_Exit_Btn_Click);
@@ -85,7 +85,8 @@
             this.Window_Close_Btn.Location = new System.Drawing.Point(1254, 0);
             this.Window_Close_Btn.Name = "Window_Close_Btn";
             this.Window_Close_Btn.Size = new System.Drawing.Size(46, 25);
-            this.Window_Close_Btn.TabIndex = 11;
+            this.Window_Close_Btn.TabIndex = 0;
+            this.Window_Close_Btn.TabStop = false;
             this.Window_Close_Btn.UseVisualStyleBackColor = false;
             this.Window_Close_Btn.Click += new System.EventHandler(this.Window_Close_Btn_Click);
             // 
@@ -96,21 +97,21 @@
             this.Add_Task_Task_Type_Id.Location = new System.Drawing.Point(89, 30);
             this.Add_Task_Task_Type_Id.Name = "Add_Task_Task_Type_Id";
             this.Add_Task_Task_Type_Id.Size = new System.Drawing.Size(230, 21);
-            this.Add_Task_Task_Type_Id.TabIndex = 18;
+            this.Add_Task_Task_Type_Id.TabIndex = 1;
             // 
             // Add_Task_Start_Date
             // 
             this.Add_Task_Start_Date.Location = new System.Drawing.Point(89, 57);
             this.Add_Task_Start_Date.Name = "Add_Task_Start_Date";
             this.Add_Task_Start_Date.Size = new System.Drawing.Size(230, 20);
-            this.Add_Task_Start_Date.TabIndex = 34;
+            this.Add_Task_Start_Date.TabIndex = 2;
             // 
             // Add_Task_End_Date
             // 
             this.Add_Task_End_Date.Location = new System.Drawing.Point(89, 83);
             this.Add_Task_End_Date.Name = "Add_Task_End_Date";
             this.Add_Task_End_Date.Size = new System.Drawing.Size(230, 20);
-            this.Add_Task_End_Date.TabIndex = 35;
+            this.Add_Task_End_Date.TabIndex = 3;
             // 
             // Add_Task_Point
             // 
@@ -119,7 +120,7 @@
             this.Add_Task_Point.Multiline = true;
             this.Add_Task_Point.Name = "Add_Task_Point";
             this.Add_Task_Point.Size = new System.Drawing.Size(230, 26);
-            this.Add_Task_Point.TabIndex = 36;
+            this.Add_Task_Point.TabIndex = 4;
             // 
             // Add_Task_Source
             // 
@@ -128,7 +129,7 @@
             this.Add_Task_Source.Multiline = true;
             this.Add_Task_Source.Name = "Add_Task_Source";
             this.Add_Task_Source.Size = new System.Drawing.Size(230, 26);
-            this.Add_Task_Source.TabIndex = 37;
+            this.Add_Task_Source.TabIndex = 5;
             // 
             // Add_Task_Note
             // 
@@ -137,25 +138,27 @@
             this.Add_Task_Note.Multiline = true;
             this.Add_Task_Note.Name = "Add_Task_Note";
             this.Add_Task_Note.Size = new System.Drawing.Size(230, 135);
-            this.Add_Task_Note.TabIndex = 38;
+            this.Add_Task_Note.TabIndex = 6;
             // 
             // Add_Task_Student
             // 
             this.Add_Task_Student.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Add_Task_Student.FormattingEnabled = true;
+            this.Add_Task_Student.ItemHeight = 13;
             this.Add_Task_Student.Location = new System.Drawing.Point(89, 341);
             this.Add_Task_Student.Name = "Add_Task_Student";
             this.Add_Task_Student.Size = new System.Drawing.Size(230, 21);
-            this.Add_Task_Student.TabIndex = 39;
+            this.Add_Task_Student.TabIndex = 8;
             // 
             // Add_Task_Group
             // 
             this.Add_Task_Group.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Add_Task_Group.FormattingEnabled = true;
+            this.Add_Task_Group.ItemHeight = 13;
             this.Add_Task_Group.Location = new System.Drawing.Point(89, 314);
             this.Add_Task_Group.Name = "Add_Task_Group";
             this.Add_Task_Group.Size = new System.Drawing.Size(230, 21);
-            this.Add_Task_Group.TabIndex = 40;
+            this.Add_Task_Group.TabIndex = 7;
             // 
             // label1
             // 
@@ -256,7 +259,7 @@
             this.Add_Task_Btn.Location = new System.Drawing.Point(89, 368);
             this.Add_Task_Btn.Name = "Add_Task_Btn";
             this.Add_Task_Btn.Size = new System.Drawing.Size(230, 26);
-            this.Add_Task_Btn.TabIndex = 49;
+            this.Add_Task_Btn.TabIndex = 9;
             this.Add_Task_Btn.Text = "Add Task";
             this.Add_Task_Btn.UseVisualStyleBackColor = false;
             this.Add_Task_Btn.Click += new System.EventHandler(this.Add_Task_Btn_Click);
@@ -269,7 +272,8 @@
             this.Add_Task_Student_Table.Location = new System.Drawing.Point(325, 49);
             this.Add_Task_Student_Table.Name = "Add_Task_Student_Table";
             this.Add_Task_Student_Table.Size = new System.Drawing.Size(963, 190);
-            this.Add_Task_Student_Table.TabIndex = 50;
+            this.Add_Task_Student_Table.TabIndex = 0;
+            this.Add_Task_Student_Table.TabStop = false;
             // 
             // Add_Task_All_Student_Table
             // 
@@ -279,7 +283,8 @@
             this.Add_Task_All_Student_Table.Location = new System.Drawing.Point(325, 273);
             this.Add_Task_All_Student_Table.Name = "Add_Task_All_Student_Table";
             this.Add_Task_All_Student_Table.Size = new System.Drawing.Size(963, 190);
-            this.Add_Task_All_Student_Table.TabIndex = 51;
+            this.Add_Task_All_Student_Table.TabIndex = 0;
+            this.Add_Task_All_Student_Table.TabStop = false;
             this.Add_Task_All_Student_Table.SelectionChanged += new System.EventHandler(this.Add_Task_All_Student_Table_SelectionChanged);
             // 
             // label9

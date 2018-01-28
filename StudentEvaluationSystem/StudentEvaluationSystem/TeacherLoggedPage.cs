@@ -46,6 +46,7 @@ namespace StudentEvaluationSystem
                 {
                     DateTime task_start_date = Add_Task_Start_Date.Value;
                     DateTime task_end_date = Add_Task_End_Date.Value;
+                    int student_id = Convert.ToInt32(Add_Task_Student.SelectedValue);
                     Task New_Task = new Task()
                     {
                         task_type_id = Convert.ToInt32(Add_Task_Task_Type_Id.SelectedValue),
@@ -55,12 +56,14 @@ namespace StudentEvaluationSystem
                         task_source = Add_Task_Source.Text,
                         task_note = Add_Task_Note.Text,
                         task_group_id = Convert.ToInt32(Add_Task_Group.SelectedValue),
-                        task_student_id = Convert.ToInt32(Add_Task_Student.SelectedValue)
+                        task_student_id = student_id
                     };
                     CommonMethods.db.Tasks.Add(New_Task);
                     CommonMethods.db.SaveChanges();
+                    CommonMethods.CalcStudentCAP_Point(student_id, CommonMethods.db.Tasks, CommonMethods.db.Task_Types, CommonMethods.db.Students);
                     CommonMethods.SuccessMsg("Operation success");
-                    CommonMethods.FillDataGridView(Add_Task_Student_Table, CommonMethods.db.Tasks);
+                    CommonMethods.FillDataGridView(Add_Task_Student_Table, CommonMethods.db.Students, CommonMethods.db.Task_Types, CommonMethods.db.Groups, CommonMethods.db.Teachers, CommonMethods.db.Tasks, _logged_teacher_id);
+                    CommonMethods.FillDataGridView(Add_Task_All_Student_Table, CommonMethods.db.Genders, CommonMethods.db.Groups, CommonMethods.db.Students, CommonMethods.db.Teachers, _logged_teacher_id);
                 }
                 else
                 {

@@ -49,7 +49,7 @@
             this.Mentor_Pg_Mentor_Login_Btn.Location = new System.Drawing.Point(285, 346);
             this.Mentor_Pg_Mentor_Login_Btn.Name = "Mentor_Pg_Mentor_Login_Btn";
             this.Mentor_Pg_Mentor_Login_Btn.Size = new System.Drawing.Size(230, 26);
-            this.Mentor_Pg_Mentor_Login_Btn.TabIndex = 13;
+            this.Mentor_Pg_Mentor_Login_Btn.TabIndex = 3;
             this.Mentor_Pg_Mentor_Login_Btn.Text = "Login";
             this.Mentor_Pg_Mentor_Login_Btn.UseVisualStyleBackColor = false;
             this.Mentor_Pg_Mentor_Login_Btn.Click += new System.EventHandler(this.Mentor_Pg_Mentor_Login_Btn_Click);
@@ -61,7 +61,7 @@
             this.Mentor_Login_Password.Multiline = true;
             this.Mentor_Login_Password.Name = "Mentor_Login_Password";
             this.Mentor_Login_Password.Size = new System.Drawing.Size(230, 26);
-            this.Mentor_Login_Password.TabIndex = 12;
+            this.Mentor_Login_Password.TabIndex = 2;
             this.Mentor_Login_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
             // 
             // Mentor_Login_Email
@@ -71,7 +71,7 @@
             this.Mentor_Login_Email.Multiline = true;
             this.Mentor_Login_Email.Name = "Mentor_Login_Email";
             this.Mentor_Login_Email.Size = new System.Drawing.Size(230, 26);
-            this.Mentor_Login_Email.TabIndex = 11;
+            this.Mentor_Login_Email.TabIndex = 1;
             this.Mentor_Login_Email.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
             // 
             // Main_Logo
@@ -97,6 +97,7 @@
             this.Window_Close_Btn.Name = "Window_Close_Btn";
             this.Window_Close_Btn.Size = new System.Drawing.Size(46, 25);
             this.Window_Close_Btn.TabIndex = 9;
+            this.Window_Close_Btn.TabStop = false;
             this.Window_Close_Btn.UseVisualStyleBackColor = false;
             this.Window_Close_Btn.Click += new System.EventHandler(this.Window_Close_Btn_Click);
             // 
@@ -111,7 +112,7 @@
             this.Mentor_Pg_Back_Btn.Location = new System.Drawing.Point(285, 378);
             this.Mentor_Pg_Back_Btn.Name = "Mentor_Pg_Back_Btn";
             this.Mentor_Pg_Back_Btn.Size = new System.Drawing.Size(230, 26);
-            this.Mentor_Pg_Back_Btn.TabIndex = 14;
+            this.Mentor_Pg_Back_Btn.TabIndex = 4;
             this.Mentor_Pg_Back_Btn.Text = "Back";
             this.Mentor_Pg_Back_Btn.UseVisualStyleBackColor = false;
             this.Mentor_Pg_Back_Btn.Click += new System.EventHandler(this.Mentor_Pg_Back_Btn_Click);

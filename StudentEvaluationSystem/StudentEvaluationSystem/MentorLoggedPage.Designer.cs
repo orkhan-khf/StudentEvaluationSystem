@@ -71,7 +71,7 @@
             this.AP_Exit_Btn.Location = new System.Drawing.Point(535, 662);
             this.AP_Exit_Btn.Name = "AP_Exit_Btn";
             this.AP_Exit_Btn.Size = new System.Drawing.Size(230, 26);
-            this.AP_Exit_Btn.TabIndex = 55;
+            this.AP_Exit_Btn.TabIndex = 1;
             this.AP_Exit_Btn.Text = "Exit";
             this.AP_Exit_Btn.UseVisualStyleBackColor = false;
             this.AP_Exit_Btn.Click += new System.EventHandler(this.AP_Exit_Btn_Click);
@@ -87,7 +87,8 @@
             this.Window_Close_Btn.Location = new System.Drawing.Point(1254, 0);
             this.Window_Close_Btn.Name = "Window_Close_Btn";
             this.Window_Close_Btn.Size = new System.Drawing.Size(46, 25);
-            this.Window_Close_Btn.TabIndex = 54;
+            this.Window_Close_Btn.TabIndex = 0;
+            this.Window_Close_Btn.TabStop = false;
             this.Window_Close_Btn.UseVisualStyleBackColor = false;
             this.Window_Close_Btn.Click += new System.EventHandler(this.Window_Close_Btn_Click);
             // 
