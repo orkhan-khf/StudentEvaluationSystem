@@ -50,6 +50,7 @@
             this.Window_Close_Btn.Name = "Window_Close_Btn";
             this.Window_Close_Btn.Size = new System.Drawing.Size(46, 25);
             this.Window_Close_Btn.TabIndex = 1;
+            this.Window_Close_Btn.TabStop = false;
             this.Window_Close_Btn.UseVisualStyleBackColor = false;
             this.Window_Close_Btn.Click += new System.EventHandler(this.Window_Close_Btn_Click);
             // 
@@ -75,7 +76,7 @@
             this.Student_Pg_Student_Login_Btn.Location = new System.Drawing.Point(285, 346);
             this.Student_Pg_Student_Login_Btn.Name = "Student_Pg_Student_Login_Btn";
             this.Student_Pg_Student_Login_Btn.Size = new System.Drawing.Size(230, 26);
-            this.Student_Pg_Student_Login_Btn.TabIndex = 8;
+            this.Student_Pg_Student_Login_Btn.TabIndex = 3;
             this.Student_Pg_Student_Login_Btn.Text = "Login";
             this.Student_Pg_Student_Login_Btn.UseVisualStyleBackColor = false;
             this.Student_Pg_Student_Login_Btn.Click += new System.EventHandler(this.Student_Pg_Student_Login_Btn_Click);
@@ -87,7 +88,7 @@
             this.Student_Login_Password.Multiline = true;
             this.Student_Login_Password.Name = "Student_Login_Password";
             this.Student_Login_Password.Size = new System.Drawing.Size(230, 26);
-            this.Student_Login_Password.TabIndex = 7;
+            this.Student_Login_Password.TabIndex = 2;
             this.Student_Login_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
             // 
             // Student_Login_Email
@@ -97,7 +98,7 @@
             this.Student_Login_Email.Multiline = true;
             this.Student_Login_Email.Name = "Student_Login_Email";
             this.Student_Login_Email.Size = new System.Drawing.Size(230, 26);
-            this.Student_Login_Email.TabIndex = 6;
+            this.Student_Login_Email.TabIndex = 1;
             this.Student_Login_Email.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxChanged);
             // 
             // Student_Pg_Back_Btn
@@ -111,7 +112,7 @@
             this.Student_Pg_Back_Btn.Location = new System.Drawing.Point(285, 378);
             this.Student_Pg_Back_Btn.Name = "Student_Pg_Back_Btn";
             this.Student_Pg_Back_Btn.Size = new System.Drawing.Size(230, 26);
-            this.Student_Pg_Back_Btn.TabIndex = 9;
+            this.Student_Pg_Back_Btn.TabIndex = 4;
             this.Student_Pg_Back_Btn.Text = "Back";
             this.Student_Pg_Back_Btn.UseVisualStyleBackColor = false;
             this.Student_Pg_Back_Btn.Click += new System.EventHandler(this.Student_Pg_Back_Btn_Click);

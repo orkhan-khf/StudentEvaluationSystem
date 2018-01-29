@@ -36,6 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -115,6 +116,12 @@
     <Compile Include="Mentor.cs">
       <DependentUpon>StudentEvaluationSystemDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MentorLoggedPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MentorLoggedPage.Designer.cs">
+      <DependentUpon>MentorLoggedPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="MentorLoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +151,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentEvaluationSystemDBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="StudentLoggedPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentLoggedPage.Designer.cs">
+      <DependentUpon>StudentLoggedPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentLoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +171,12 @@
     </Compile>
     <Compile Include="Teacher.cs">
       <DependentUpon>StudentEvaluationSystemDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherLoggedPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherLoggedPage.Designer.cs">
+      <DependentUpon>TeacherLoggedPage.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherLoginPage.cs">
       <SubType>Form</SubType>
@@ -180,6 +199,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MentorLoggedPage.resx">
+      <DependentUpon>MentorLoggedPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MentorLoginPage.resx">
       <DependentUpon>MentorLoginPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,8 +214,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StudentLoggedPage.resx">
+      <DependentUpon>StudentLoggedPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentLoginPage.resx">
       <DependentUpon>StudentLoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherLoggedPage.resx">
+      <DependentUpon>TeacherLoggedPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherLoginPage.resx">
       <DependentUpon>TeacherLoginPage.cs</DependentUpon>

@@ -49,6 +49,7 @@
             this.Window_Close_Btn.Name = "Window_Close_Btn";
             this.Window_Close_Btn.Size = new System.Drawing.Size(46, 25);
             this.Window_Close_Btn.TabIndex = 0;
+            this.Window_Close_Btn.TabStop = false;
             this.Window_Close_Btn.UseVisualStyleBackColor = false;
             this.Window_Close_Btn.Click += new System.EventHandler(this.Window_Close_Btn_Click);
             // 

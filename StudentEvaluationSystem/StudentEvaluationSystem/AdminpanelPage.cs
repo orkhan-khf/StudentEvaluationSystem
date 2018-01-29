@@ -55,14 +55,6 @@ namespace StudentEvaluationSystem
 			CommonMethods.PlaceHolderMaker(Student_Email, "Enter e-mail");
 			CommonMethods.PlaceHolderMaker(Student_Github_Account, "Enter github URL");
 			CommonMethods.FillDataGridView(Gender_Table, CommonMethods.db.Genders);
-			CommonMethods.FillCombobox(Teacher_Gender, CommonMethods.db.Genders);
-			CommonMethods.FillCombobox(Mentor_Gender, CommonMethods.db.Genders);
-			CommonMethods.FillCombobox(Mentor_Gender, CommonMethods.db.Genders);
-			CommonMethods.FillCombobox(Group_Schedule_Id, CommonMethods.db.Group_Schedule);
-			CommonMethods.FillCombobox(Group_Type_Id, CommonMethods.db.Group_Types);
-			CommonMethods.FillCombobox(Group_Teacher_Id, CommonMethods.db.Teachers);
-			CommonMethods.FillCombobox(Student_Gender, CommonMethods.db.Genders);
-			CommonMethods.FillCombobox(Student_Group, CommonMethods.db.Groups);
 		}
 
 		private void TextBoxChanged(object sender, KeyEventArgs e)
@@ -72,7 +64,15 @@ namespace StudentEvaluationSystem
 
 		private void Adminpanel_Gender_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (Adminpanel_Gender.SelectedIndex == 3)
+            if (Adminpanel_Gender.SelectedIndex == 1)
+            {
+                CommonMethods.FillCombobox(Teacher_Gender, CommonMethods.db.Genders);
+            }
+            else if (Adminpanel_Gender.SelectedIndex == 2)
+            {
+                CommonMethods.FillCombobox(Mentor_Gender, CommonMethods.db.Genders);
+            }
+            else if (Adminpanel_Gender.SelectedIndex == 3)
 			{
 				CommonMethods.FillDataGridView(Task_Types_Table, CommonMethods.db.Task_Types);
 			}
@@ -84,16 +84,23 @@ namespace StudentEvaluationSystem
 			{
 				CommonMethods.FillDataGridView(Group_Schedules_Table, CommonMethods.db.Group_Schedule);
 				CommonMethods.FillDataGridView(Group_Types_Table, CommonMethods.db.Group_Types);
-			}
+                CommonMethods.FillCombobox(Group_Schedule_Id, CommonMethods.db.Group_Schedule);
+            }
 			else if (Adminpanel_Gender.SelectedIndex == 6)
 			{
-				CommonMethods.FillDataGridView(Groups_Table, CommonMethods.db.Groups);
+                CommonMethods.FillCombobox(Group_Type_Id, CommonMethods.db.Group_Types);
+                CommonMethods.FillDataGridView(Groups_Table, CommonMethods.db.Groups);
 				CommonMethods.FillCombobox(Group_Mentor_Id, CommonMethods.db.Mentors);
-			}
+                CommonMethods.FillCombobox(Group_Teacher_Id, CommonMethods.db.Teachers);
+            }
+            else if(Adminpanel_Gender.SelectedIndex == 7){
+                CommonMethods.FillCombobox(Student_Gender, CommonMethods.db.Genders);
+                CommonMethods.FillCombobox(Student_Group, CommonMethods.db.Groups);
+            }
 		}
 		private void Student_Pg_Back_Btn_Click(object sender, EventArgs e)
 		{
-			CommonMethods.OpenAnotherForm(this, new TeacherLoginPage());
+			CommonMethods.OpenAnotherForm(this, new Form1());
 		}
 
 		private void Teacher_Pg_Gender_Add_Btn_Click(object sender, EventArgs e)
@@ -134,9 +141,9 @@ namespace StudentEvaluationSystem
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			try
-			{
-				if (Teacher_Name.Text != "" && Teacher_Name.Text != "Enter name" && Teacher_Surname.Text != "" && Teacher_Surname.Text != "Enter surname" && Teacher_Email.Text != "" && Teacher_Email.Text != "Enter e-mail" && Teacher_Password.Text != "" && Teacher_Password.Text != "Enter new password" && Teacher_Password_Confirm.Text != "" && Teacher_Password_Confirm.Text != "Confirm password" && Teacher_Phone.Text != "" && Teacher_Phone.Text != "Enter phone" && Teacher_Info.Text != "" && Teacher_Info.Text != "Enter teacher info")
+            try
+            {
+                if (Teacher_Name.Text != "" && Teacher_Name.Text != "Enter name" && Teacher_Surname.Text != "" && Teacher_Surname.Text != "Enter surname" && Teacher_Email.Text != "" && Teacher_Email.Text != "Enter e-mail" && Teacher_Password.Text != "" && Teacher_Password.Text != "Enter new password" && Teacher_Password_Confirm.Text != "" && Teacher_Password_Confirm.Text != "Confirm password" && Teacher_Phone.Text != "" && Teacher_Phone.Text != "Enter phone" && Teacher_Info.Text != "" && Teacher_Info.Text != "Enter teacher info")
 				{
 					if (Teacher_Password.Text == Teacher_Password_Confirm.Text)
 					{
@@ -180,14 +187,14 @@ namespace StudentEvaluationSystem
 				{
 					CommonMethods.ErrMsg("Please enter valid informations!");
 				}
-			}
-			catch
-			{
-				CommonMethods.ErrMsg("Operation failed. Please try again!");
-			}
-		}
+        }
+            catch
+            {
+            	CommonMethods.ErrMsg("Operation failed. Please try again!");
+            }
+}
 
-		private void Select_Teacher_Photo_Btn_Click(object sender, EventArgs e)
+        private void Select_Teacher_Photo_Btn_Click(object sender, EventArgs e)
 		{
 			CommonMethods.SelectPhoto("Select Teacher Photo", "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png");
 		}
@@ -204,9 +211,9 @@ namespace StudentEvaluationSystem
 
 		private void Add_New_Mentor_Btn_Click(object sender, EventArgs e)
 		{
-			try
-			{
-				if (Mentor_Name.Text != "" && Mentor_Name.Text != "Enter name" && Mentor_Surname.Text != "" && Mentor_Surname.Text != "Enter surname" && Mentor_Email.Text != "" && Mentor_Email.Text != "Enter e-mail" && Mentor_Password.Text != "" && Mentor_Password.Text != "Enter new password" && Mentor_Password_Confirm.Text != "" && Mentor_Password_Confirm.Text != "Confirm password" && Mentor_Phone.Text != "" && Mentor_Phone.Text != "Enter phone" && Mentor_Info.Text != "" && Mentor_Info.Text != "Enter mentor info")
+            try
+            {
+                if (Mentor_Name.Text != "" && Mentor_Name.Text != "Enter name" && Mentor_Surname.Text != "" && Mentor_Surname.Text != "Enter surname" && Mentor_Email.Text != "" && Mentor_Email.Text != "Enter e-mail" && Mentor_Password.Text != "" && Mentor_Password.Text != "Enter new password" && Mentor_Password_Confirm.Text != "" && Mentor_Password_Confirm.Text != "Confirm password" && Mentor_Phone.Text != "" && Mentor_Phone.Text != "Enter phone" && Mentor_Info.Text != "" && Mentor_Info.Text != "Enter mentor info")
 				{
 					if (Mentor_Password.Text == Mentor_Password_Confirm.Text)
 					{
@@ -250,28 +257,28 @@ namespace StudentEvaluationSystem
 				{
 					CommonMethods.ErrMsg("Please enter valid informations!");
 				}
-			}
-			catch
-			{
-				CommonMethods.ErrMsg("Operation failed. Please try again!");
-			}
-		}
+        }
+            catch
+            {
+            	CommonMethods.ErrMsg("Operation failed. Please try again!");
+            }
+}
 
-		private void Show_Current_Mentors_Btn_Click(object sender, EventArgs e)
+        private void Show_Current_Mentors_Btn_Click(object sender, EventArgs e)
 		{
 			CommonMethods.OpenAnotherForm(this, new CurrentMentorsPage());
 		}
 
-		private void Add_New_Task_Type_Btn_Click(object sender, EventArgs e)
+        private void Add_New_Task_Type_Btn_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				if (Task_Type_Name.Text != "" && Task_Type_Name.Text != "Enter task type name" && Task_Type_Rate.Text != "" && Task_Type_Rate.Text != "Enter task type rate")
 				{
-					Task_Types New_Task_Type = new Task_Types()
-					{
-						task_type_name = Task_Type_Name.Text,
-						task_type_rate = Convert.ToDouble(Task_Type_Rate.Text)
+                    Task_Types New_Task_Type = new Task_Types()
+                    {
+                        task_type_name = Task_Type_Name.Text,
+                        task_type_rate = Convert.ToDouble(Task_Type_Rate.Text.Replace(".", ","))
 					};
 					CommonMethods.db.Task_Types.Add(New_Task_Type);
 					CommonMethods.db.SaveChanges();
